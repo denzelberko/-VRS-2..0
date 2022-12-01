@@ -1,9 +1,9 @@
 <template>
     <div class='nav'>
     <c>Vacation Recommender</c>
-    <a href='http://localhost:3000/Home/'>Home</a>
-    <a href='http://localhost:3000/Recomendations/'>Recommendations</a>
-    <a href='#'>Search Trips</a>
+    <a href='http://localhost:3000/#/Home/'>Home</a>
+    <a href='http://localhost:3000/Recommendations/'>Recommendations</a>
+    <a href='http://localhost:3000/#/searchtrips'>Search Trips</a>
     <a href='#'>Admin</a> 
     </div>
     </template>

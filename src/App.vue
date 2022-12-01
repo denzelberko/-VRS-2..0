@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
+  <div class='nav'>
+    
+  <c>Vacation Recommender</c>
+  <a href='http://localhost:3000/#/Home/'>Home</a>
+  <a href='http://localhost:3000/Recommendations/'>Recommendations</a>
+  <a href='http://localhost:3000/#/searchtrips'>Search Trips</a>
+  <a href='#'>Admin</a> 
+  
   <b-container>
     <br />
     <router-view/>
     </b-container>
   </div>
-</template>
+  
+  </template>
+  
+  <script>
+  export default{
+      name: "Header"
+  
+  }
+  </script>
+  <style>
+   .nav{
+      background-color: #0D0047;
+      overflow: hidden;
+   }
+   .nav c {
+      color: #f2f2f2f2;
+      padding: 20px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+      font-weight: bold;
+  }
+   .nav a {
+      color: #f2f2f2f2;
+      padding: 20px 30px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 20px;
+  }
+  .nav a:hover{
+      background-color:#ddd;
+      color: #000160;
+  }
+  </style>
+  
 
-<script>
-export default {
-  name: 'App'
-}
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-body{
-  padding:0;
-  margin:0;
-}
-</style>

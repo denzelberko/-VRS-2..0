@@ -4,6 +4,9 @@ import Recomendations from '@/components/Recomendations'
 import SearchTrips from '@/components/SearchTrips'
 import TripPage from '@/components/TripPage'
 import AdminPage from '@/components/AdminPage'
+import Home from '@/components/Home'
+
+
 
 
 Vue.use(Router)
@@ -13,7 +16,7 @@ export default new Router({
     
     {
       path: '/',
-      name: 'Recomendations',
+      name: 'Recommendations',
       component: Recomendations
 
     },
@@ -35,11 +38,13 @@ export default new Router({
       component: AdminPage
 
     },
+    {
+      path: '/Home',
+      name: 'Home',
+      component: Home
+
+    }
     
-
-
-
-
     
   ]
 })
