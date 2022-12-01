@@ -1,32 +1,125 @@
 <template>
   <div class="hello">
-  
+  <Header />
   <h2> Trip Parameters </h2>
 
 
-  <label>Price Index Preference:</label>
-    <select v-model="trip.priceIndex">
-  <option disabled value="">Please select price index preference </option>
-  <option v-for = "index in priceIndicies">{{index}}</option>
-
-</select>
-  
-
-<label>Weather Preference:</label>
-    <select v-model="trip.weather">
-  <option disabled value="">Please select weather preference </option>
-  <option v-for = "weather in weathers">{{weather}}</option>
+<label>What is your price range?</label>
+    <select v-model="trip.priceRange">
+  <option v-for = "price in prices">{{price}}</option>
 
 </select>
 
-<label>Vacation Purpose:</label>
+<label>How important is it that your trip is in this price range?</label>
+    <select v-model="trip.priceRangeImp">
+  <option v-for = "priceImp in imps">{{priceImp}}</option>
+
+</select>
+
+<label>How long do you want your trip to be?</label>
+    <select v-model="trip.tripLength">
+  <option v-for = "length in lengths">{{length}}</option>
+
+</select>
+
+<label>How important is it that your trip is this long?</label>
+    <select v-model="trip.tripLengthImp">
+  <option v-for = "lengthImp in imps">{{lengthImp}}</option>
+
+</select>
+
+<label>Are there any continents you wish to visit?</label>
+    <select v-model="trip.continent">
+  <option disabled value="">Select all that apply</option>
+  <option v-for = "cont in continents">{{cont}}</option>
+
+</select>
+
+<label>How important is it that you visit one of these continents?</label>
+    <select v-model="trip.continentImp">
+  <option v-for = "contImp in imps">{{contImp}}</option>
+
+</select>
+
+<label>How would you describe the purpose of your trip?</label>
     <select v-model="trip.purpose">
-  <option disabled value="">Please select purpose preference </option>
-  <option v-for = "purpose in purposes">{{purpose}}</option>
+  <option disabled value="">Select all that apply</option>
+  <option v-for = "purp in purposes">{{purp}}</option>
 
 </select>
 
+<label>How important is it that your trip satisfies this purpose?</label>
+    <select v-model="trip.purposeImp">
+  <option v-for = "purpImp in imps">{{purpImp}}</option>
 
+</select>
+
+<label>What types of climates are you looking to visit?</label>
+    <select v-model="trip.climate">
+  <option disabled value="">Select all that apply</option>
+  <option v-for = "clim in climates">{{clim}}</option>
+
+</select>
+
+<label>How important is it that you visit one of these climate types?</label>
+    <select v-model="trip.climateImp">
+  <option v-for = "climImp in imps">{{climImp}}</option>
+
+</select>
+
+<label>How busy do you want your destination to be?</label>
+    <select v-model="trip.busyLevel">
+  <option v-for = "busy in busyLevels">{{busy}}</option>
+
+</select>
+
+<label>How important is it that your destination is this busy?</label>
+    <select v-model="trip.busyLevelImp">
+  <option v-for = "busyImp in imps">{{busyImp}}</option>
+
+</select>
+
+<label>How important is it that English is a native language at your destination?</label>
+    <select v-model="trip.language">
+  <option v-for = "lang in imps">{{lang}}</option>
+
+</select>
+
+<label>How important is the quality of the food at your destination?</label>
+    <select v-model="trip.food">
+  <option v-for = "fd in imps">{{fd}}</option>
+
+</select>
+
+<label>How important is the quality of the attractions at your destination?</label>
+    <select v-model="trip.attractions">
+  <option v-for = "attr in imps">{{attr}}</option>
+
+</select>
+
+<label>How important is the quality of the hotels at your destination?</label>
+    <select v-model="trip.hotel">
+  <option v-for = "hot in imps">{{hot}}</option>
+
+</select>
+
+<label>How important is it for your destination to have opportunities to take nice photos?</label>
+    <select v-model="trip.instagramability">
+  <option v-for = "insta in imps">{{insta}}</option>
+
+</select>
+
+<label>How important is it for your destination to be child-friendly?</label>
+    <select v-model="trip.childFriendly">
+  <option v-for = "child in imps">{{child}}</option>
+
+</select>
+
+<label>How important is it for your destination to be safe?</label>
+    <select v-model="trip.safety">
+  <option v-for = "safe in imps">{{safe}}</option>
+
+</select>
 
     <b-button @click="search(trip.priceIndex, trip.purpose, trip.weather) ">
           Search Parameters
@@ -44,19 +137,21 @@
 
 <script>
 import axios from 'axios';
+import Header from './Header.vue';
 
 export default {
   name: 'HelloWorld',
+  components: {
+    Header
+  },
   data () {
     return {
       destinations: null,
       //field key must match attribute of object
       fields: [
-      {key: 'id', label: 'Trip ID', sortable: true},
-      {key: 'name', label: 'Destination Name', sortable: true},
-      {key: 'weather', label: 'Weather', sortable: true},
-      {key: 'priceIndex', label: 'Price', sortable: true},
-      {key: 'purpose', label: 'Purpose', sortable: true, sortable: true}],
+      {key: 'rank', label: 'Rank', sortable: false},
+      {key: 'name', label: 'Destination', sortable: false},
+      {key: 'score', label: 'Score', sortable: false}],
       form: {
           email: '',
           first_name: '',
@@ -64,13 +159,34 @@ export default {
           id: ''
         },
       trip:{
-        priceIndex:"",
-        weather: "",
-        purpose: ""
+        priceRange: "",
+        priceRangeImp: "",
+        tripLength: "",
+        tripLengthImp: "",
+        continent: "",
+        continentImp: "",
+        purpose: "",
+        purposeImp: "",
+        climate: "",
+        climateImp: "",
+        busyLevel: "",
+        busyLevelImp: "",
+        language: "",
+        food: "",
+        attractions: "",
+        hotel: "",
+        instagramability: "",
+        childFriendly: "",
+        safety: ""
       },
-      priceIndicies: [0,1,2,3,4,5,6,7,8,9],
-      weathers: ["Hot", "Cold", "Mild", "Continental", "Tropical"],
-      purposes: ["Family Get Away", "Sightseeing", "Historical Monuments", "Relaxation"]
+
+      prices: ["low", "medium", "high"],
+      imps: ["not at all", "not too much", "somewhat", "very", "extremely"],
+      lengths: ["weekend", "one week", "more than one week"],
+      continents: ["North America", "South America", "Europe", "Asia", "Africa", "Australia"],
+      purposes: ["Sightseeing", "Relaxation", "Nature"],
+      climates: ["Tropical", "Dry", "Temperate", "Continental", "Cold"],
+      busyLevels: ["not busy", "somewhat", "very"]
     }
   },
   
@@ -81,10 +197,10 @@ export default {
         .then(response => (this.students = response.data))
     },
 
-    search(price, purpose, weather){
+    search(priceRange, priceRangeImp, tripLength, tripLengthImp, continent, continentImp, purpose, purposeImp, climate, climateImp, busyLevel, busyLevelImp, language, food, attractions, hotel, instagramability, childFriendly, safety){
        
       axios
-        .get('http://localhost:8085/destinations/'+price +'/'+ purpose+'/'+weather) 
+        .get('http://localhost:8085/destinations/'+priceRange +'/'+ priceRangeImp +'/'+ tripLength +'/'+ tripLengthImp +'/'+ continent +'/'+ continentImp +'/'+ purpose +'/'+ purposeImp +'/'+ climate +'/'+ climateImp +'/'+ busyLevel +'/'+ busyLevelImp +'/'+ language +'/'+ food +'/'+ attractions +'/'+ hotel +'/'+ instagramability +'/'+ childFriendly +'/'+ safety) 
         .then(response => (this.destinations = response.data))
 
     },

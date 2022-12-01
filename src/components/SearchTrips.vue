@@ -31,15 +31,13 @@
 
         
         <template v-slot:cell(AddReview)="data">
-            <router-link :to="
-            {
 
-                name: 'TripPage',
-                params: { tripid: data.item.id}
-                }"
-            tag="button"
-            class="btn btn-secondary">Add Review
-            </router-link>
+            <button class = "btn btn-secondary" @click="addReview(data.item.id)">Add Review
+            
+        </button>
+       
+            
+          
     
 
 
@@ -146,6 +144,12 @@
 
 
 
+
+      },
+
+      addReview(trip){
+
+        $('#trip').modal('show');
 
       }
 

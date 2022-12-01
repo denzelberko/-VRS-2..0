@@ -1,15 +1,6 @@
 <template>
   <div id="app">
   <b-container>
-    <div>
-      <b-navbar toggleable type="dark" variant="dark">
-      <b-navbar-brand href="#"><b-icon icon="" variant="warning" style="margin-left: 20px;"></b-icon> Vacation Recomendations </b-navbar-brand>
-
-      <b-navbar-toggle target="sidebar-menu">
-      </b-navbar-toggle>
-      
-    </b-navbar>
-    </div>
     <br />
     <router-view/>
     </b-container>
@@ -29,6 +20,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 20px;
+}
+body{
+  padding:0;
+  margin:0;
 }
 </style>
