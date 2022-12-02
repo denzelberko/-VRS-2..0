@@ -1,7 +1,5 @@
 <template>
   <div>
-
-    <Header/>
     <b-carousel
       id="carousel-1"
       :interval="4000"
@@ -14,16 +12,29 @@
     >
       <!-- Text slides with image -->
       <b-carousel-slide
-        caption="First Slide"
-        img-src="https://picsum.photos/1024/480/?image=58"
+        caption="New York"
+        img-src="https://picsum.photos/1024/480/?image=411"
       ></b-carousel-slide>
 
-      <!-- Slides with custom text -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-      </b-carousel-slide>
+      <b-carousel-slide
+        caption="Paris"
+        img-src="https://picsum.photos/1024/480/?image=420"
+      ></b-carousel-slide>
 
-      <!-- Slides with image only -->
-      <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=52"></b-carousel-slide>
+      <b-carousel-slide
+        caption="San Francisco"
+        img-src="https://picsum.photos/1024/480/?image=392"
+      ></b-carousel-slide>
+
+      <b-carousel-slide
+        caption="Punta Cana"
+        img-src="https://picsum.photos/1024/480/?image=521"
+      ></b-carousel-slide>
+
+      <b-carousel-slide
+        caption="Rome"
+        img-src="https://picsum.photos/1024/480/?image=629"
+      ></b-carousel-slide>
 
     </b-carousel>
   </div>
