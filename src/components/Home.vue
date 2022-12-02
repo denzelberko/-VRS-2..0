@@ -6,11 +6,11 @@
   </div>
 
   <div class="info">
-    <info>Using our own unique algorithm, we will be able to make the perfect destination recommendation for all of your needs. With over 100+ locations to search from, your next trip is waiting. </info>
+    <info>Using our own unique algorithm, we will find the perfect destination for all of your needs. With over 100+ locations to search from, your next trip is waiting. </info>
   </div>
     
     
-    <div style="position:relative; top:150px;">
+    <div style="position:relative; top:55px;">
     <b-carousel
       id="carousel-2"
       :interval="4000"
@@ -22,11 +22,7 @@
       style="text-shadow: 1px 1px 2px #333;"
     >
       <!-- Text slides with image -->
-      <b-carousel-slide
-      caption="New York"  
-      img-src="https://picsum.photos/2048/960/?image=411"
-      >
-      </b-carousel-slide>
+
 
       <b-carousel-slide
         caption="Paris"
@@ -48,14 +44,23 @@
         img-src="https://picsum.photos/2048/960/?image=629"
       ></b-carousel-slide>
 
+      <b-carousel-slide
+      caption="New York"  
+      img-src="https://picsum.photos/2048/960/?image=411"
+      >
+      </b-carousel-slide>
+
     </b-carousel>
   </div>
 
-  <div style="position:relative; top:175px;">
-    <info>Click recommendations to find your next adventure! </info>
+  <div class="info">
+    <info>Click recommendations above to find your next adventure! </info>
   </div>
 
   </div>
+
+  
+
 </template>
 
 <script>
@@ -92,37 +97,47 @@ a {
 }
 .wel{
   background-color: #e4e4e4f2;
-  overflow:hidden;
+  padding: 5px 0px;
   text-align: center;
   position:relative; top:50px;
 }
 
 .info{
-  overflow:hidden;
+  color: #000000;
+  padding: 20px 30px;
   text-align: center;
-  position:relative; top:100px;
+  text-decoration: none;
+  font-size: 20px;
+  position:relative; top:50px;
 }
 Welcome {
   font-size: 30px;
-  padding: 50px 0px;
   color: #0D0047;
-  text-align:center;
-  text-align-last: center;
-  background-color: #e4e4e4f2;
-  text-align: center;
   text-decoration: none;
   background-position: center;
   font-weight: bold;
 }
 
 info{
+  font-size: 15px;
+  padding: 50px 0px;
+  color: #000000;
+  text-decoration: none;
+  background-position: center;
+}
+
+hyper{
   white-space:pre;
   margin-left: auto;
   margin-right:100px;
   font-size: 15px;
-  text-align: center;
   text-decoration: none;
-  background-position: center;
+}
+
+.hyper{
+  color: #000000;
+  font-size: 20px;
+  position:relative; top:100px;
 }
 
 </style>
