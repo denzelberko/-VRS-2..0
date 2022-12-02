@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Recomendations from '@/components/Recomendations'
+import Recommendations from '@/components/Recomendations'
 import SearchTrips from '@/components/SearchTrips'
 import TripPage from '@/components/TripPage'
 import AdminPage from '@/components/AdminPage'
@@ -16,8 +16,8 @@ export default new Router({
     
     {
       path: '/',
-      name: 'Recommendations',
-      component: Recomendations
+      name: 'Home',
+      component: Home
 
     },
     {
@@ -39,9 +39,9 @@ export default new Router({
 
     },
     {
-      path: '/Home',
-      name: 'Home',
-      component: Home
+      path: '/recommendations',
+      name: 'Recommendations',
+      component: Recommendations
 
     }
     
