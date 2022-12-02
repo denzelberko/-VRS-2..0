@@ -1,7 +1,11 @@
 <template>
   <div class="hello">
- 
-  <h2> Trip Parameters </h2>
+    
+    
+
+    <Header/>
+    <pre>{{''}}</pre>
+  <h2 class = "center"> Trip Parameters </h2>
 
 
 <label>What is your price range?</label>
@@ -9,6 +13,8 @@
   <option v-for = "price in prices">{{price}}</option>
 
 </select>
+<pre>{{''}}</pre>
+
 
 <label>How important is it that your trip is in this price range?</label>
     <select v-model="trip.priceRangeImp">
@@ -16,17 +22,23 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How long do you want your trip to be?</label>
     <select v-model="trip.tripLength">
   <option v-for = "length in lengths">{{length}}</option>
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is it that your trip is this long?</label>
     <select v-model="trip.tripLengthImp">
   <option v-for = "lengthImp in imps">{{lengthImp}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
 <label>Are there any continents you wish to visit?</label>
     <select v-model="trip.continent">
@@ -35,11 +47,15 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is it that you visit one of these continents?</label>
     <select v-model="trip.continentImp">
   <option v-for = "contImp in imps">{{contImp}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
 <label>How would you describe the purpose of your trip?</label>
     <select v-model="trip.purpose">
@@ -48,11 +64,15 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is it that your trip satisfies this purpose?</label>
     <select v-model="trip.purposeImp">
   <option v-for = "purpImp in imps">{{purpImp}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
 <label>What types of climates are you looking to visit?</label>
     <select v-model="trip.climate">
@@ -61,11 +81,15 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is it that you visit one of these climate types?</label>
     <select v-model="trip.climateImp">
   <option v-for = "climImp in imps">{{climImp}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
 <label>How busy do you want your destination to be?</label>
     <select v-model="trip.busyLevel">
@@ -73,11 +97,15 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is it that your destination is this busy?</label>
     <select v-model="trip.busyLevelImp">
   <option v-for = "busyImp in imps">{{busyImp}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
 <label>How important is it that English is a native language at your destination?</label>
     <select v-model="trip.language">
@@ -85,11 +113,15 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is the quality of the food at your destination?</label>
     <select v-model="trip.food">
   <option v-for = "fd in imps">{{fd}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
 <label>How important is the quality of the attractions at your destination?</label>
     <select v-model="trip.attractions">
@@ -97,11 +129,15 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is the quality of the hotels at your destination?</label>
     <select v-model="trip.hotel">
   <option v-for = "hot in imps">{{hot}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
 <label>How important is it for your destination to have opportunities to take nice photos?</label>
     <select v-model="trip.instagramability">
@@ -109,17 +145,23 @@
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is it for your destination to be child-friendly?</label>
     <select v-model="trip.childFriendly">
   <option v-for = "child in imps">{{child}}</option>
 
 </select>
 
+<pre>{{''}}</pre>
+
 <label>How important is it for your destination to be safe?</label>
     <select v-model="trip.safety">
   <option v-for = "safe in imps">{{safe}}</option>
 
 </select>
+
+<pre>{{''}}</pre>
 
     <b-button @click="search(trip.priceRange, trip.priceRangeImp, trip.tripLength, trip.tripLengthImp, trip.continent, trip.continentImp, trip.purpose, trip.purposeImp, trip.climate, trip.climateImp, trip.busyLevel, trip.busyLevelImp, trip.language, trip.food, trip.attractions, trip.hotel, trip.instagramability, trip.childFriendly, trip.safety) ">
           Search Parameters
@@ -255,6 +297,7 @@ export default {
 <style scoped>
 h1, h2 {
   font-weight: normal;
+  text-align: center;
 }
 ul {
   list-style-type: none;

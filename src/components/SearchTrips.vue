@@ -1,10 +1,13 @@
 <template>
   
-    <div class="hello">
+  
+    <div>
+
+    <Header/>
       
       
-    <trippage tripya = "hello"></trippage>
-    
+      
+    <Trippage tripya = "hello"/>    
     
     
     <h2> Search Trips </h2>
@@ -57,11 +60,14 @@
   <script>
   import axios from 'axios';
   import TripPage from './TripPage.vue';
+  import Header from './Header.vue';
+
 
   
   export default {
     components: {
-      'trippage': TripPage
+    Header,
+    TripPage
     },
     name: "HelloWorld",
     created() {
@@ -154,8 +160,7 @@
         addReview(trip) {
             $("#trip").modal("show");
         }
-    },
-    components: { TripPage, TripPage, TripPage, TripPage }
+    }
 }
 
   

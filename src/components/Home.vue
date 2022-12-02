@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <Header/>
     <b-carousel
       id="carousel-1"
       :interval="4000"
@@ -28,7 +30,12 @@
 </template>
 
 <script>
+import Header from './Header.vue';
+
 export default {
+  components: {
+    Header
+  },
   name: 'Home',
   data () {
     return {

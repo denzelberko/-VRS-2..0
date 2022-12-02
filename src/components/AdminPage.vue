@@ -1,5 +1,7 @@
 <template>
     <div class="hello">
+
+      <Header/>
     
 
 
@@ -50,8 +52,13 @@
   
   <script>
   import axios from 'axios';
+  import Header from './Header.vue';
+
   
   export default {
+    components: {
+    Header
+  },
     
     name: 'HelloWorld',
     created () {
@@ -152,6 +159,8 @@
           .delete('http://localhost:8085/destinations/' + itemId)
           .then((response) => {
             console.log(response)
+
+            this.$router.go()
             
           })
       }

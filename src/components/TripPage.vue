@@ -1,15 +1,21 @@
 <template>
     <div>
+    <Header/>
     
     
-      <p>{{tripya}}</p>
+      <h1>{{tripya}}</h1>
     </div>
   </template>
   
   <script>
   import axios from 'axios';
+  import Header from './Header.vue';
+
   
   export default {
+    components: {
+    Header
+  },
     props: ['tripya'],
     name: 'HelloWorld',
     data () {
