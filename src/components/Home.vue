@@ -40,7 +40,7 @@
       ></b-carousel-slide>
 
       <b-carousel-slide
-        caption="Rome"
+        caption="Florence"
         img-src="https://picsum.photos/2048/960/?image=629"
       ></b-carousel-slide>
 
