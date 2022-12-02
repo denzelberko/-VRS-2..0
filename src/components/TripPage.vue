@@ -2,7 +2,7 @@
     <div>
     
     
-      <p> destinations</p>
+      <p>{{tripya}}</p>
     </div>
   </template>
   
@@ -10,7 +10,7 @@
   import axios from 'axios';
   
   export default {
-    props: ['destinations'],
+    props: ['tripya'],
     name: 'HelloWorld',
     data () {
       return {

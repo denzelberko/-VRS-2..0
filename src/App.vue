@@ -1,5 +1,6 @@
 <template>
   <div class='nav'>
+  
     
   <c>Vacation Recommender</c>
   <a href='http://localhost:3000/#/Home/'>Home</a>
@@ -20,6 +21,7 @@
   </template>
   
   <script>
+  
   export default{
       name: "Header"
   

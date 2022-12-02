@@ -1,7 +1,11 @@
 <template>
+  
     <div class="hello">
+      
+      
+    <trippage tripya = "hello"></trippage>
     
-    <app-trippage>destinations="destinations123"</app-trippage>
+    
     
     <h2> Search Trips </h2>
 
@@ -22,7 +26,7 @@
               
                 }"
             tag="button"
-            class="btn btn-primary">More Details
+            class="btn btn-primary" @click="getdestination(data.item.id)">More Details
             </router-link>
     
 
@@ -52,9 +56,13 @@
   
   <script>
   import axios from 'axios';
-import TripPage from './TripPage.vue';
+  import TripPage from './TripPage.vue';
+
   
   export default {
+    components: {
+      'trippage': TripPage
+    },
     name: "HelloWorld",
     created() {
         this.load();
@@ -69,6 +77,7 @@ import TripPage from './TripPage.vue';
     data() {
         return {
             destinations: [],
+            singleDestination: [],
             search: "",
             //field key must match attribute of object
             fields: [
@@ -94,6 +103,15 @@ import TripPage from './TripPage.vue';
         };
     },
     methods: {
+
+        getdestination(destinationId){
+
+          axios
+                .get("http://localhost:8085/destinations/" + destinationId)
+                .then(response => (this.singleDestination = response.data));
+
+        },
+
         init() {
             axios
                 .get("http://localhost:8085/students")
@@ -137,7 +155,7 @@ import TripPage from './TripPage.vue';
             $("#trip").modal("show");
         }
     },
-    components: { TripPage }
+    components: { TripPage, TripPage, TripPage, TripPage }
 }
 
   

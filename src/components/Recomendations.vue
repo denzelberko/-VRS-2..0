@@ -121,7 +121,7 @@
 
 </select>
 
-    <b-button @click="search(trip.priceIndex, trip.purpose, trip.weather) ">
+    <b-button @click="search(trip.priceRange, trip.priceRangeImp, trip.tripLength, trip.tripLengthImp, trip.continent, trip.continentImp, trip.purpose, trip.purposeImp, trip.climate, trip.climateImp, trip.busyLevel, trip.busyLevelImp, trip.language, trip.food, trip.attractions, trip.hotel, trip.instagramability, trip.childFriendly, trip.safety) ">
           Search Parameters
   </b-button>
 
