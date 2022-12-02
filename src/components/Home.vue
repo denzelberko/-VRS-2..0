@@ -6,7 +6,7 @@
   </div>
 
   <div class="info">
-    <info>Using our own unique algorithm, we will be able to find the perfect destination for all of your needs. With over 100+ locations to search from, your next trip is waiting. </info>
+    <info>Using our own unique algorithm, we will find the perfect destination for all of your needs. With over 100+ locations to search from, your next trip is waiting. </info>
   </div>
     
     
@@ -53,8 +53,8 @@
     </b-carousel>
   </div>
 
-  <div class="hyper">
-    <hyper href='http://localhost:3000/#/Recommendations/'>Click recommendations above to find your next adventure! </hyper>
+  <div class="info">
+    <info>Click recommendations above to find your next adventure! </info>
   </div>
 
   </div>
