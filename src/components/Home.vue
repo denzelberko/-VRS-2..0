@@ -1,9 +1,16 @@
 <template>
   <div>
     <Header/>
+  <div class="wel">
     <Welcome>Welcome to your all-in-one vacation guide!</Welcome>
+  </div>
+
+  <div class="info">
+    <info>Using our own unique algorithm, we will be able to make the perfect destination recommendation for all of your needs. With over 100+ locations to search from, your next trip is waiting. </info>
+  </div>
     
-    <info>Using our own unnique algorithm, we will be able to make the perfect destination recommendation for all of your needs. With over 100+ locations to search from, your next trip is waiting.</info>
+    
+    <div style="position:relative; top:150px;">
     <b-carousel
       id="carousel-2"
       :interval="4000"
@@ -43,6 +50,12 @@
 
     </b-carousel>
   </div>
+
+  <div style="position:relative; top:175px;">
+    <info>Click recommendations to find your next adventure! </info>
+  </div>
+
+  </div>
 </template>
 
 <script>
@@ -77,8 +90,39 @@ li {
 a {
   color: #42b983;
 }
+.wel{
+  background-color: #e4e4e4f2;
+  overflow:hidden;
+  text-align: center;
+  position:relative; top:50px;
+}
+
+.info{
+  overflow:hidden;
+  text-align: center;
+  position:relative; top:100px;
+}
 Welcome {
-  padding: 40px 0px;
+  font-size: 30px;
+  padding: 50px 0px;
+  color: #0D0047;
+  text-align:center;
+  text-align-last: center;
+  background-color: #e4e4e4f2;
+  text-align: center;
+  text-decoration: none;
+  background-position: center;
+  font-weight: bold;
+}
+
+info{
+  white-space:pre;
+  margin-left: auto;
+  margin-right:100px;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  background-position: center;
 }
 
 </style>
