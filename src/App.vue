@@ -49,6 +49,15 @@
       background-color:#ddd;
       color: #000160;
   }
+  body, html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  }
+  body {
+  background-color: #f2f2f2f2;
+  }
   </style>
   
 

@@ -1,21 +1,25 @@
 <template>
   <div>
     <Header/>
+    <Welcome>Welcome to your all-in-one vacation guide!</Welcome>
+    
+    <info>Using our own unnique algorithm, we will be able to make the perfect destination recommendation for all of your needs. With over 100+ locations to search from, your next trip is waiting.</info>
     <b-carousel
-      id="carousel-1"
+      id="carousel-2"
       :interval="4000"
       controls
       indicators
       fade
       img-width="512"
-      img-height="240"
-      style="text-shadow: 1px 1px 2px #333; text-decoration:line-through;"
+      img-height="580"
+      style="text-shadow: 1px 1px 2px #333;"
     >
       <!-- Text slides with image -->
       <b-carousel-slide
-        caption="New York"
-        img-src="https://picsum.photos/2048/960/?image=411"
-      ></b-carousel-slide>
+      caption="New York"  
+      img-src="https://picsum.photos/2048/960/?image=411"
+      >
+      </b-carousel-slide>
 
       <b-carousel-slide
         caption="Paris"
@@ -58,6 +62,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 h1, h2 {
   font-weight: normal;
 }
@@ -72,4 +77,8 @@ li {
 a {
   color: #42b983;
 }
+Welcome {
+  padding: 40px 0px;
+}
+
 </style>
