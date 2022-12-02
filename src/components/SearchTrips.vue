@@ -1,8 +1,8 @@
 <template>
     <div class="hello">
     
-
-
+    <app-trippage>destinations="destinations123"</app-trippage>
+    
     <h2> Search Trips </h2>
 
     <input type = "text" v-model="search" placeholder="Search Trips"/>
@@ -52,111 +52,93 @@
   
   <script>
   import axios from 'axios';
+import TripPage from './TripPage.vue';
   
   export default {
-    
-    name: 'HelloWorld',
-    created () {
-        this.load()
-
+    name: "HelloWorld",
+    created() {
+        this.load();
     },
     computed: {
-        filteredTrips : function(){
+        filteredTrips: function () {
             return this.destinations.filter((destination) => {
-
                 return destination.name.match(this.search);
-
             });
         }
     },
-    data () {
-      return {
-        destinations: [],
-        search: "",
-        //field key must match attribute of object
-        fields: [
-        {key: 'id', label: 'Trip ID'},
-        {key: 'name', label: 'Destination Name'},
-        {key: 'MoreDetails', label: 'More Details'},
-        {key: 'AddReview', label: 'Add Review'},
-        ],
-        form: {
-            email: '',
-            first_name: '',
-            last_name: '',
-            id: ''
-          },
-        trip:{
-          priceIndex:"",
-          weather: "",
-          purpose: ""
-        },
-        priceIndicies: [0,1,2,3,4,5,6,7,8,9],
-        weathers: ["Hot", "Cold", "Mild", "Continental", "Tropical"],
-        purposes: ["Family Get Away", "Sightseeing", "Historical Monuments", "Relaxation"]
-      }
+    data() {
+        return {
+            destinations: [],
+            search: "",
+            //field key must match attribute of object
+            fields: [
+                { key: "id", label: "Trip ID" },
+                { key: "name", label: "Destination Name" },
+                { key: "MoreDetails", label: "More Details" },
+                { key: "AddReview", label: "Add Review" },
+            ],
+            form: {
+                email: "",
+                first_name: "",
+                last_name: "",
+                id: ""
+            },
+            trip: {
+                priceIndex: "",
+                weather: "",
+                purpose: ""
+            },
+            priceIndicies: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+            weathers: ["Hot", "Cold", "Mild", "Continental", "Tropical"],
+            purposes: ["Family Get Away", "Sightseeing", "Historical Monuments", "Relaxation"]
+        };
     },
-    
     methods: {
-      init() {
-        axios
-          .get('http://localhost:8085/students')
-          .then(response => (this.students = response.data))
-      },
-  
-      load(){
-         
-        axios
-          .get('http://localhost:8085/destinations/') 
-          .then(response => (this.destinations = response.data))
-         
-  
-      },
-      edit(item, index, button) {
-        this.form.id = item.id
-        this.form.email = item.email
-        this.form.first_name = item.firstName
-        this.form.last_name = item.lastName
-      },
-      resetEditModal() {
-        this.form.id=''
-        this.form.email=''
-        this.form.first_name=''
-        this.form.last_name=''
-      },
-      onSave(event) {
-        var numId;
-        numId = parseInt(this.form.id);
-        axios
-          .put('http://localhost:8085/students/' + numId, {
-            "id": numId,
-            "firstName": this.form.first_name,
-            "lastName": this.form.last_name,
-            "email": this.form.email,
-          })
-          .then(() => this.init())
-          .catch(function (error) {
-            console.log(error);
-          });
-      },
-
-      toTripPage(){
-
-
-
-
-      },
-
-      addReview(trip){
-
-        $('#trip').modal('show');
-
-      }
-
-
-
-    }
-  }
+        init() {
+            axios
+                .get("http://localhost:8085/students")
+                .then(response => (this.students = response.data));
+        },
+        load() {
+            axios
+                .get("http://localhost:8085/destinations/")
+                .then(response => (this.destinations = response.data));
+        },
+        edit(item, index, button) {
+            this.form.id = item.id;
+            this.form.email = item.email;
+            this.form.first_name = item.firstName;
+            this.form.last_name = item.lastName;
+        },
+        resetEditModal() {
+            this.form.id = "";
+            this.form.email = "";
+            this.form.first_name = "";
+            this.form.last_name = "";
+        },
+        onSave(event) {
+            var numId;
+            numId = parseInt(this.form.id);
+            axios
+                .put("http://localhost:8085/students/" + numId, {
+                "id": numId,
+                "firstName": this.form.first_name,
+                "lastName": this.form.last_name,
+                "email": this.form.email,
+            })
+                .then(() => this.init())
+                .catch(function (error) {
+                console.log(error);
+            });
+        },
+        toTripPage() {
+        },
+        addReview(trip) {
+            $("#trip").modal("show");
+        }
+    },
+    components: { TripPage }
+}
 
   
   </script>

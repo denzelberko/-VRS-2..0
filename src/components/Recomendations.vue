@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-  <Header />
+ 
   <h2> Trip Parameters </h2>
 
 
@@ -30,7 +30,7 @@
 
 <label>Are there any continents you wish to visit?</label>
     <select v-model="trip.continent">
-  <option disabled value="">Select all that apply</option>
+  <option disabled value=""></option>
   <option v-for = "cont in continents">{{cont}}</option>
 
 </select>
@@ -43,7 +43,7 @@
 
 <label>How would you describe the purpose of your trip?</label>
     <select v-model="trip.purpose">
-  <option disabled value="">Select all that apply</option>
+  <option disabled value=""></option>
   <option v-for = "purp in purposes">{{purp}}</option>
 
 </select>
@@ -56,7 +56,7 @@
 
 <label>What types of climates are you looking to visit?</label>
     <select v-model="trip.climate">
-  <option disabled value="">Select all that apply</option>
+  <option disabled value=""></option>
   <option v-for = "clim in climates">{{clim}}</option>
 
 </select>
@@ -127,9 +127,23 @@
 
     
     <b-table striped hover responsive :items="destinations" :fields="fields">
-      <template #cell(actions)="row">
+      
+      <template v-slot:cell(MoreDetails)="data">
+            <router-link :to="
+            {
+
+                name: 'TripPage',
+              
+                }"
+            tag="button"
+            class="btn btn-primary">More Details
+            </router-link>
+    
+
+
+        </template>  
         
-      </template>
+      
     </b-table>
     
   </div>
@@ -151,7 +165,9 @@ export default {
       fields: [
       {key: 'rank', label: 'Rank', sortable: false},
       {key: 'name', label: 'Destination', sortable: false},
-      {key: 'score', label: 'Score', sortable: false}],
+      {key: 'score', label: 'Score', sortable: false},
+      {key: 'MoreDetails', label: 'More Details'}
+    ],
       form: {
           email: '',
           first_name: '',

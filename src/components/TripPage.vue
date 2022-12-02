@@ -1,44 +1,8 @@
 <template>
-    <div class="hello">
+    <div>
     
-    <h2> Trip Parameters </h2>
-  
-  
-    <label>Price Index Preference:</label>
-      <select v-model="trip.priceIndex">
-    <option disabled value="">Please select price index preference </option>
-    <option v-for = "index in priceIndicies">{{index}}</option>
-  
-  </select>
     
-  
-  <label>Weather Preference:</label>
-      <select v-model="trip.weather">
-    <option disabled value="">Please select weather preference </option>
-    <option v-for = "weather in weathers">{{weather}}</option>
-  
-  </select>
-  
-  <label>Vacation Purpose:</label>
-      <select v-model="trip.purpose">
-    <option disabled value="">Please select purpose preference </option>
-    <option v-for = "purpose in purposes">{{purpose}}</option>
-  
-  </select>
-  
-  
-  
-      <b-button @click="search(trip.priceIndex, trip.purpose, trip.weather) ">
-            Search Parameters
-    </b-button>
-  
-      
-      <b-table striped hover responsive :items="destinations" :fields="fields">
-        <template #cell(actions)="row">
-          
-        </template>
-      </b-table>
-      
+      <p> destinations</p>
     </div>
   </template>
   
@@ -46,6 +10,7 @@
   import axios from 'axios';
   
   export default {
+    props: ['destinations'],
     name: 'HelloWorld',
     data () {
       return {

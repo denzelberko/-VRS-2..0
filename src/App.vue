@@ -5,13 +5,17 @@
   <a href='http://localhost:3000/#/Home/'>Home</a>
   <a href='http://localhost:3000/Recommendations/'>Recommendations</a>
   <a href='http://localhost:3000/#/searchtrips'>Search Trips</a>
-  <a href='#'>Admin</a> 
+  <a href='http://localhost:3000/#/adminpage'>Admin</a> 
+ 
+
   
   <b-container>
     <br />
     <router-view/>
     </b-container>
+
   </div>
+  
   
   </template>
   
@@ -22,7 +26,11 @@
   }
   </script>
   <style>
-   .nav{
+   .nav a{
+      background-color: #0D0047;
+      overflow: hidden;
+   }
+   .nav c{
       background-color: #0D0047;
       overflow: hidden;
    }
@@ -36,7 +44,7 @@
   }
    .nav a {
       color: #f2f2f2f2;
-      padding: 20px 30px;
+      padding: 20px 109.1px;
       text-align: center;
       text-decoration: none;
       font-size: 20px;
