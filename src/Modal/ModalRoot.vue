@@ -30,11 +30,11 @@
           props,
           close: value => {
             this.modal = {};
-            resolve(value);
+            
           },
           dismiss: reason => {
             this.modal = {};
-            reject(reason);
+           
           },
         };
       });

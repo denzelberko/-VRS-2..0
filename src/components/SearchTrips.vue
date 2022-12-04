@@ -4,6 +4,8 @@
   <div>
     <Header />
     <ModalRoot/> 
+    <ReviewModal/>
+    
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
@@ -11,6 +13,8 @@
     
     <h2> Search Trips </h2>
     <pre>{{''}}</pre>
+
+    
 
     <div id = "search"><input id = "in" size = 50 type = "search" v-model="search" placeholder=" Search Trips..."/></div>
    
@@ -34,7 +38,7 @@
         
         <template v-slot:cell(AddReview)="data">
 
-            <button class = "btn btn-secondary" @click="addModal">Add Review
+            <button class = "btn btn-secondary" @click="addModal() ; setId(data.item.id);">Add Review
             
         </button>
        
@@ -56,32 +60,29 @@
   <script>
   import axios from 'axios';
   import Header from './Header.vue';
-  import { EventBus } from '../main';
   import ModalRoot from '@/Modal/ModalRoot.vue';
-  import ModalService from '@/Modal/ModalService';
-  import ReviewModal from '@/Modal/ReviewModal.vue';
-  import { bus } from '../main';
+  import ModalService from '@/Modal/ModalService';  
+  import {EventBus} from '../main';
+  import ReviewModal from '../Modal/ReviewModal.vue';
 
 
   
   export default {
     components: {
-    Header , ModalRoot
-   
-    },
+    Header,
+    ModalRoot,
+    ReviewModal
+},
     name: "HelloWorld",
-    mounted() {
-
-        bus.$on("insertReview", (data) => {
-            this.review = data;
-        })
-    },
+   
     created() {
         this.load();
-        bus.$on("insertReview", (data) => {
+        EventBus.$on("insertReview", (data) => {
             this.review = data;
-            resolve(data);
-        })
+            //put an axios put request here and set the destination review using the reviewId and review variables
+            
+            
+        });
     },
     computed: {
         filteredTrips: function () {
@@ -96,6 +97,7 @@
             destinations: [],
             singleDestination: null,
             search: "",
+            reviewId: '',
             //field key must match attribute of object
             fields: [
                 { key: "id", label: "Trip ID" },
@@ -121,18 +123,20 @@
     },
     methods: {
 
+    setId(id){
+
+        this.reviewId = id;
+
+        
+    
+
+    },
+
     addModal() {
         ModalService.open(ReviewModal);
       
     },
-
-      test(){
-        
-        EventBus.$emit('trip-data', 'Denzel Berko');
-
-      },
-
-      
+  
 
         getdestination(destinationId){
 

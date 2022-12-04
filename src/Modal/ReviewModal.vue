@@ -1,15 +1,16 @@
 <template>
     <Modal>
       <ModalHeader>
-        <h3>Add Review For </h3>
+        <h3>Add Review</h3>
       </ModalHeader>
       <ModalBody>
         <textarea v-model= "review" rows="4" cols="60" class="textarea1" placeholder = "Enter your review!"></textarea> 
+        {{tripId}}
         
       </ModalBody>
       <ModalFooter>
         <button @click="close('Modal closed')" class="btn btn-danger">Cancel</button>
-        <button @click="dismiss('Modal dismissed') ; insertReview(review);" class="btn btn-primary">Add Review</button>
+        <button @click="dismiss('Modal dismissed'); insertReview(review);" class="btn btn-primary">Add Review</button>
         
       </ModalFooter>
     </Modal>
@@ -23,21 +24,37 @@
   import ModalFooter from './modalFooter.vue';
   import ModalBody from './modalBody.vue';
   import ModalMixin from './ModalMixin';
-  import {bus} from '../main'
+  import {EventBus} from '../main'
   export default {
     data() {
         return {
-          
+            tripId: '',
             review: "",
             
            
         };
     },
+    created(){
+
+      EventBus.$on("tripId", (data) => {
+            this.tripId = data;
+            
+        });
+
+    },
+    mounted(){
+
+      EventBus.$on("tripId", (data) => {
+            this.tripId = data;
+            
+        });
+
+    },
     methods: {
 
       insertReview(review){
-        bus.$emit('insertReview', review);
-        console.log("hello there")
+        EventBus.$emit('insertReview', review);
+      
       }
 
     },
