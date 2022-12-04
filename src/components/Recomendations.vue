@@ -9,161 +9,169 @@
 
   
 
-
-<label>What is your price range?</label>
+<table style="width:100%">
+  <tr>
+    <td style="width:18%"><label>Price Range: </label>
     <select v-model="trip.priceRange">
-  <option v-for = "price in prices">{{price}}</option>
-
+    <option v-for = "price in prices">{{price}}</option>
 </select>
-<pre>{{''}}</pre>
+  </td>
+  
 
-
-<label>How important is it that your trip is in this price range?</label>
+    <td style="width:32%"><label> Importance</label>
     <select v-model="trip.priceRangeImp">
-  <option v-for = "priceImp in imps">{{priceImp}}</option>
+    <option v-for = "priceImp in imps">{{priceImp}}</option>
 
 </select>
+  </td>
 
-<pre>{{''}}</pre>
 
-<label>How long do you want your trip to be?</label>
+<td style="width:18%"><label>Trip Length:</label>
     <select v-model="trip.tripLength">
   <option v-for = "length in lengths">{{length}}</option>
 
 </select>
+  </td>
 
-<pre>{{''}}</pre>
-
-<label>How important is it that your trip is this long?</label>
+<td style="width:32%"><label>Importance</label>
     <select v-model="trip.tripLengthImp">
   <option v-for = "lengthImp in imps">{{lengthImp}}</option>
 
 </select>
-
-<pre>{{''}}</pre>
-
-<label>Are there any continents you wish to visit?</label>
+  </td>
+</tr>
+<tr>
+<td style="width:18%">
+<label>Continent: </label>
     <select v-model="trip.continent">
   <option disabled value=""></option>
   <option v-for = "cont in continents">{{cont}}</option>
 
 </select>
+</td>
 
-<pre>{{''}}</pre>
-
-<label>How important is it that you visit one of these continents?</label>
+<td style="width:32%">
+<label>Importance</label>
     <select v-model="trip.continentImp">
   <option v-for = "contImp in imps">{{contImp}}</option>
 
 </select>
+</td>
 
-<pre>{{''}}</pre>
-
-<label>How would you describe the purpose of your trip?</label>
+<td style="width:18%">
+<label>Purpose:</label>
     <select v-model="trip.purpose">
   <option disabled value=""></option>
   <option v-for = "purp in purposes">{{purp}}</option>
 
 </select>
 
-<pre>{{''}}</pre>
-
-<label>How important is it that your trip satisfies this purpose?</label>
+</td>
+<td style="width:32%">
+<label>Importance</label>
     <select v-model="trip.purposeImp">
   <option v-for = "purpImp in imps">{{purpImp}}</option>
 
 </select>
-
-<pre>{{''}}</pre>
-
-<label>What types of climates are you looking to visit?</label>
+</td>
+</tr>
+<tr>
+<td style="width:18%">
+<label>Climate:</label>
     <select v-model="trip.climate">
   <option disabled value=""></option>
   <option v-for = "clim in climates">{{clim}}</option>
 
 </select>
-
-<pre>{{''}}</pre>
-
-<label>How important is it that you visit one of these climate types?</label>
+</td>
+<td style="width:32%">
+<label>Importance</label>
     <select v-model="trip.climateImp">
   <option v-for = "climImp in imps">{{climImp}}</option>
 
 </select>
+</td>
 
-<pre>{{''}}</pre>
-
-<label>How busy do you want your destination to be?</label>
+<td style="width:18%">
+<label>Busyness</label>
     <select v-model="trip.busyLevel">
   <option v-for = "busy in busyLevels">{{busy}}</option>
 
 </select>
-
-<pre>{{''}}</pre>
-
-<label>How important is it that your destination is this busy?</label>
+</td>
+<td style="width:32%">
+<label>Importance</label>
     <select v-model="trip.busyLevelImp">
   <option v-for = "busyImp in imps">{{busyImp}}</option>
 
 </select>
+</td>
+</tr>
+</table>
 
-<pre>{{''}}</pre>
-
-<label>How important is it that English is a native language at your destination?</label>
+<br>
+<table style="width:100%">
+<tr>
+<td style="width:25%">
+<label>English Speaking</label>
     <select v-model="trip.language">
   <option v-for = "lang in imps">{{lang}}</option>
 
 </select>
-
-<pre>{{''}}</pre>
-
-<label>How important is the quality of the food at your destination?</label>
+</td>
+<td style="width:25%">
+<label>Food Quality</label>
     <select v-model="trip.food">
   <option v-for = "fd in imps">{{fd}}</option>
 
 </select>
+</td>
+<td style="width:25%">
 
-<pre>{{''}}</pre>
-
-<label>How important is the quality of the attractions at your destination?</label>
+<label>Quality of Attractions</label>
     <select v-model="trip.attractions">
   <option v-for = "attr in imps">{{attr}}</option>
 
 </select>
+</td>
 
-<pre>{{''}}</pre>
-
-<label>How important is the quality of the hotels at your destination?</label>
+<td style="width:25%">
+<label>Hotel Quality</label>
     <select v-model="trip.hotel">
   <option v-for = "hot in imps">{{hot}}</option>
 
 </select>
+</td>
+</tr>
+<tr>
+<td style="width:25%">
 
-<pre>{{''}}</pre>
-
-<label>How important is it for your destination to have opportunities to take nice photos?</label>
+<label>Picturesque</label>
     <select v-model="trip.instagramability">
   <option v-for = "insta in imps">{{insta}}</option>
 
 </select>
 
-<pre>{{''}}</pre>
+</td>
+<td style="width:25%">
 
-<label>How important is it for your destination to be child-friendly?</label>
+<label>Child-friendliness</label>
     <select v-model="trip.childFriendly">
   <option v-for = "child in imps">{{child}}</option>
 
 </select>
+</td>
+<td style="width:25%">
 
-<pre>{{''}}</pre>
-
-<label>How important is it for your destination to be safe?</label>
+<label>Safety</label>
     <select v-model="trip.safety">
   <option v-for = "safe in imps">{{safe}}</option>
 
 </select>
-
-<pre>{{''}}</pre>
+</td>
+</tr>
+</table>
+<br>
 
     <b-button @click="search(trip.priceRange, trip.priceRangeImp, trip.tripLength, trip.tripLengthImp, trip.continent, trip.continentImp, trip.purpose, trip.purposeImp, trip.climate, trip.climateImp, trip.busyLevel, trip.busyLevelImp, trip.language, trip.food, trip.attractions, trip.hotel, trip.instagramability, trip.childFriendly, trip.safety) ">
           Search Parameters
@@ -243,7 +251,7 @@ export default {
 
       prices: ["low", "medium", "high"],
       imps: ["not at all", "not too much", "somewhat", "very", "extremely"],
-      lengths: ["weekend", "one week", "more than one week"],
+      lengths: ["weekend", "one week", "over one week"],
       continents: ["North America", "South America", "Europe", "Asia", "Africa", "Australia"],
       purposes: ["Sightseeing", "Relaxation", "Nature"],
       climates: ["Tropical", "Dry", "Temperate", "Continental", "Cold"],
