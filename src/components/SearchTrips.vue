@@ -7,7 +7,7 @@
 
     <Header />
     <ModalRoot/> 
-    {{review}}
+
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
     
@@ -51,7 +51,6 @@
 
 
       </b-table>
-    </div>
       
     </div>
   </template>
