@@ -13,7 +13,7 @@
     <pre>{{''}}</pre>
 
 
-    <h2 id = "attractionHead">Attractions</h2>
+    <h2 id = "attractionHead"><u>Attractions</u></h2>
     
     <pre>{{''}}</pre>
     
@@ -21,13 +21,16 @@
 
     <div v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> <pre>{{''}}</pre> 
     
-    <p>Description:</p>
+    <p><b>Description:</b></p>
 
     <p>{{attraction.description}}</p>
     
-    <p>Type of attraction:{{attraction.type}}</p>
-    <p>Hous to visit: {{attraction.hoursToVisit}}</p>
-    <p>Cost: {{attraction.cost}}</p>
+    <p><b>Type of attraction: </b>{{attraction.type}}</p>
+    <p><b>Hous to visit: </b>{{attraction.hoursToVisit}}</p>
+    <p><b>Cost: </b>{{attraction.cost}}</p>
+
+    <pre>{{''}}</pre> 
+    <pre>{{''}}</pre> 
 
     </div>
       
@@ -37,7 +40,7 @@
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
-    <h2 id = "hotelHead">Hotels</h2>
+    <h2 id = "hotelHead"><u>Hotels</u></h2>
 
     <pre>{{''}}</pre>
     
@@ -45,102 +48,103 @@
 
     <div v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
 
-    <p>Cost:{{hotel.cost}}</p>
-    <p>Rating: {{hotel.rating}}</p>
-   
+    <p><b>Cost:</b>{{hotel.cost}}</p>
+    <p><b>Rating:</b> {{hotel.rating}}</p>
+    <pre>{{''}}</pre> 
+    <pre>{{''}}</pre> 
 
     </div>
       
     </ul>
     
-    <h2 id = "specsHead">Specifications</h2>
+    <h2 id = "specsHead"><u>Specifications</u></h2>
     
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
-    <p>Weather: {{singleDestination.weather}}</p>
+    <p><b>Weather: </b> {{singleDestination.weather}}</p>
    
 
     <pre>{{''}}</pre>
     
 
     
-    <p>Kid Friendly Score: {{singleDestination.kidFriendlyScore}}</p>
+    <p><b>Kid Friendly Score: </b> {{singleDestination.kidFriendlyScore}}</p>
 
     <pre>{{''}}</pre>
     
 
     
-    <p>Food Quality Score: {{singleDestination.foodQualityScore}}</p>
+    <p><b>Food Quality Score: </b> {{singleDestination.foodQualityScore}}</p>
 
     <pre>{{''}}</pre>
     
 
    
-    <p>Price Index: {{singleDestination.priceIndex}}</p>
+    <p><b>Price Index: </b> {{singleDestination.priceIndex}}</p>
 
     <pre>{{''}}</pre>
     
 
     
-    <p>Instagram Ability Score: {{singleDestination.instagramAbilityScore}}</p>
+    <p><b>Instagram Ability Score: </b> {{singleDestination.instagramAbilityScore}}</p>
 
     <pre>{{''}}</pre>
     
 
 
-    <p>Native Language: {{singleDestination.nativeLanguage}}</p>
+    <p><b>Native Language: </b> {{singleDestination.nativeLanguage}}</p>
 
    
     <pre>{{''}}</pre>
 
   
-    <p>Purpose: {{singleDestination.purpose}}</p>
+    <p><b>Purpose: </b> {{singleDestination.purpose}}</p>
 
     
     <pre>{{''}}</pre>
 
    
-    <p>Hotel Quality Score: {{singleDestination.hotelQualityScore}}</p>
+    <p><b>Hotel Quality Score: </b> {{singleDestination.hotelQualityScore}}</p>
    
    
     <pre>{{''}}</pre>
 
-    <p>Country: {{singleDestination.country}}</p>
+    <p><b>Country: </b> {{singleDestination.country}}</p>
 
     
     <pre>{{''}}</pre>
 
     
-    <p>Continent: {{singleDestination.continent}}</p>
+    <p><b>Continent: </b> {{singleDestination.continent}}</p>
 
     <pre>{{''}}</pre>
 
     
-    <p>Popularity: {{singleDestination.popularity}}</p>
+    <p><b>Popularity: </b> {{singleDestination.popularity}}</p>
 
   
     <pre>{{''}}</pre>
 
    
-    <p>Rec Trip Length: {{singleDestination.recTripLength}}</p>
+    <p><b>Rec Trip Length: </b> {{singleDestination.recTripLength}}</p>
 
   
     <pre>{{''}}</pre>
 
   
-    <p>Currency: {{singleDestination.currency}}</p>
+    <p><b>Currency: </b> {{singleDestination.currency}}</p>
 
     <pre>{{''}}</pre>
 
   
-    <p>Attraction Score: {{singleDestination.attractionScore}}</p>
+    <p><b>Attraction Score: </b> {{singleDestination.attractionScore}}</p>
 
   
     <pre>{{''}}</pre>
 
     
-    <p>Safety Score: {{singleDestination.safetyScore}}</p>
+    <p><b>Safety Score: </b> {{singleDestination.safetyScore}}</p>
 
     <pre>{{''}}</pre>
      
