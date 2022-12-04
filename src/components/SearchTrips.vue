@@ -7,7 +7,7 @@
 
     <Header />
     <ModalRoot/> 
-
+    <div style="margin-left: 15%; margin-right: 15%;">
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
     
@@ -51,7 +51,7 @@
 
 
       </b-table>
-      
+      </div>
     </div>
   </template>
   

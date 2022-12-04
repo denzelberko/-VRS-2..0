@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header/>
-    <container style="padding: 20px 00px">
+    <div style="margin-left: 15%; margin-right: 15%;">
   <div class="wel">
     <Welcome>Welcome to your all-in-one vacation guide!</Welcome>
   </div>
@@ -57,7 +57,7 @@
   <div class="info">
     <info>Visit <a href="http://localhost:3000/#/recommendations/">recommendations</a>  to find your next adventure! </info>
   </div>
-  </container>
+</div>
   </div>
 
 

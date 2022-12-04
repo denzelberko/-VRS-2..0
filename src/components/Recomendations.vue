@@ -5,6 +5,7 @@
 
     <Header/>
     <pre>{{''}}</pre>
+  <div style="margin-left: 10%; margin-right: 10%;">
   <h2 class = "center"> Trip Parameters </h2>
 
   
@@ -197,7 +198,7 @@
         
       
     </b-table>
-    
+  </div>
   </div>
 </template>
 
