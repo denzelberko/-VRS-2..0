@@ -1,10 +1,7 @@
 <template>
   
   
-  
-
-    
-
+  <div>
     <Header />
     <ModalRoot/> 
 
@@ -52,6 +49,7 @@
 
       </b-table>
       
+    </div>
     </div>
   </template>
   
