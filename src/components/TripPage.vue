@@ -12,6 +12,10 @@
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
+    <img :src="singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="400" height="300"> 
+
+    <pre>{{''}}</pre>
+    <pre>{{''}}</pre>
 
     <h2 id = "attractionHead"><u>Attractions</u></h2>
     
@@ -28,9 +32,11 @@
     <p><b>Type of attraction: </b>{{attraction.type}}</p>
     <p><b>Hous to visit: </b>{{attraction.hoursToVisit}}</p>
     <p><b>Cost: </b>{{attraction.cost}}</p>
+    <img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> 
 
     <pre>{{''}}</pre> 
     <pre>{{''}}</pre> 
+    
 
     </div>
       
@@ -286,6 +292,13 @@
     text-align: center;
    
   }
+  .center{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+
 
   #hotelHead, #attractionHead, #specsHead {
     color: #1b526a;
