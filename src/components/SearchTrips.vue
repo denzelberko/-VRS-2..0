@@ -7,8 +7,9 @@
 
     <app-header></app-header>
 
+    <pre>{{''}}</pre>
+    <pre>{{''}}</pre>
     
-    <p>{{singleDestination}}</p>
     
     <h2> Search Trips </h2>
 

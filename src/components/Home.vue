@@ -54,7 +54,7 @@
   </div>
 
   <div class="info">
-    <info>Click recommendations above to find your next adventure! </info>
+    <info>Visit <a href="http://localhost:3000/#/recommendations/">recommendations</a>  to find your next adventure! </info>
   </div>
 
   </div>
@@ -93,7 +93,7 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #297fc0;
 }
 .wel{
   background-color: #e4e4e4f2;

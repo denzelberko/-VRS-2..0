@@ -2,10 +2,13 @@
     <div class="hello">
 
       <Header/>
-    
+
+      
+    <pre>{{''}}</pre>
+    <pre>{{''}}</pre>
 
 
-    <h2> Search Trips </h2>
+    <h2 id = "adminHeader"> Admin Page </h2>
 
     <input type = "text" v-model="search" placeholder="Search Trips"/>
 
@@ -188,6 +191,10 @@
   }
   a {
     color: #42b983;
+  }
+  #adminHeader {
+    text-align: center;
+
   }
   </style>
   
