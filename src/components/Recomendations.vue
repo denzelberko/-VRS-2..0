@@ -12,14 +12,20 @@
 
 <table style="width:100%">
   <tr>
-    <td style="width:18%"><label>Price Range: </label>
-    <select v-model="trip.priceRange">
+    <td style="width:7%"><label>Price Range: </label>
+    
+      </td>
+      <td style="width:8%">
+    <select v-model="trip.priceRange" style=" width: 115px">
     <option v-for = "price in prices">{{price}}</option>
 </select>
+
   </td>
   
 
-    <td style="width:32%"><label> Importance</label>
+    <td style="width:6%"><label> Importance</label>
+    </td>
+    <td style="width:12%">
     <select v-model="trip.priceRangeImp">
     <option v-for = "priceImp in imps">{{priceImp}}</option>
 
@@ -27,81 +33,99 @@
   </td>
 
 
-<td style="width:18%"><label>Trip Length:</label>
-    <select v-model="trip.tripLength">
+<td  style="width:7%"><label>Trip Length:</label>
+</td>
+    <td style="width:8%">
+    <select v-model="trip.tripLength" style=" width: 115px">
   <option v-for = "length in lengths">{{length}}</option>
 
 </select>
   </td>
 
-<td style="width:32%"><label>Importance</label>
+<td style="width:6%"><label>Importance</label>
+</td>
+    <td style="width:12%">
     <select v-model="trip.tripLengthImp">
   <option v-for = "lengthImp in imps">{{lengthImp}}</option>
 
 </select>
   </td>
-</tr>
-<tr>
-<td style="width:18%">
+
+<td style="width:7%">
 <label>Continent: </label>
-    <select v-model="trip.continent">
+</td>
+    <td style="width:8%">
+    <select v-model="trip.continent" style=" width: 115px">
   <option disabled value=""></option>
   <option v-for = "cont in continents">{{cont}}</option>
 
 </select>
 </td>
 
-<td style="width:32%">
+<td style="width:7%">
 <label>Importance</label>
+</td>
+    <td style="width:12%">
     <select v-model="trip.continentImp">
   <option v-for = "contImp in imps">{{contImp}}</option>
 
 </select>
 </td>
-
-<td style="width:18%">
+</tr>
+<tr>
+<td style="width:7%">
 <label>Purpose:</label>
-    <select v-model="trip.purpose">
+</td>
+    <td style="width:8%">
+    <select v-model="trip.purpose" style=" width: 115px">
   <option disabled value=""></option>
   <option v-for = "purp in purposes">{{purp}}</option>
 
 </select>
 
 </td>
-<td style="width:32%">
+<td style="width:6%">
 <label>Importance</label>
+</td>
+    <td style="width:12%">
     <select v-model="trip.purposeImp">
   <option v-for = "purpImp in imps">{{purpImp}}</option>
 
 </select>
 </td>
-</tr>
-<tr>
-<td style="width:18%">
+<td style="width:7%">
 <label>Climate:</label>
-    <select v-model="trip.climate">
+</td>
+    <td style="width:8%">
+    <select v-model="trip.climate" style=" width: 115px">
   <option disabled value=""></option>
   <option v-for = "clim in climates">{{clim}}</option>
 
 </select>
 </td>
-<td style="width:32%">
+<td style="width:6%">
 <label>Importance</label>
+</td>
+    <td style="width:12%">
     <select v-model="trip.climateImp">
   <option v-for = "climImp in imps">{{climImp}}</option>
 
 </select>
 </td>
 
-<td style="width:18%">
+<td style="width:7%">
 <label>Busyness</label>
-    <select v-model="trip.busyLevel">
+</td>
+    <td style="width:8%">
+    <select v-model="trip.busyLevel" style=" width: 115px">
   <option v-for = "busy in busyLevels">{{busy}}</option>
 
 </select>
 </td>
-<td style="width:32%">
+<td style="width:6%">
 <label>Importance</label>
+</td>
+    <td style="width:12%">
     <select v-model="trip.busyLevelImp">
   <option v-for = "busyImp in imps">{{busyImp}}</option>
 
@@ -111,6 +135,8 @@
 </table>
 
 <br>
+<br>
+
 <table style="width:100%">
 <tr>
 <td style="width:25%">
@@ -173,6 +199,7 @@
 </tr>
 </table>
 <br>
+
 
     <b-button @click="search(trip.priceRange, trip.priceRangeImp, trip.tripLength, trip.tripLengthImp, trip.continent, trip.continentImp, trip.purpose, trip.purposeImp, trip.climate, trip.climateImp, trip.busyLevel, trip.busyLevelImp, trip.language, trip.food, trip.attractions, trip.hotel, trip.instagramability, trip.childFriendly, trip.safety) ">
           Search Parameters
@@ -252,8 +279,8 @@ export default {
 
       prices: ["low", "medium", "high"],
       imps: ["not at all", "not too much", "somewhat", "very", "extremely"],
-      lengths: ["weekend", "one week", "over one week"],
-      continents: ["North America", "South America", "Europe", "Asia", "Africa", "Australia"],
+      lengths: ["weekend", "one week", "over a week"],
+      continents: ["N. America", "S. America", "Europe", "Asia", "Africa", "Australia"],
       purposes: ["Sightseeing", "Relaxation", "Nature"],
       climates: ["Tropical", "Dry", "Temperate", "Continental", "Cold"],
       busyLevels: ["not busy", "somewhat", "very"]
