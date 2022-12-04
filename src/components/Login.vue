@@ -1,14 +1,16 @@
 <template>
+    <div><Header/>
     <div class="login-container">
+      
       <form @submit.prevent="login">
-        <h2 class="mb-3">Login</h2>
+        <h2 id = "loginheading">Login</h2>
         <div class="input">
-          <label for="id">School ID</label>
+          <label for="id">Username</label>
           <input
             class="form-control"
             type="text"
             name="id"
-            placeholder="student/professor id"
+            placeholder="username"
             required
           />
         </div>
@@ -38,15 +40,21 @@
             class="btn-close"
             data-bs-dismiss="alert"
             aria-label="Close"
+            
           ></button>
         </div>
       </form>
     </div>
+  </div>
   </template>
   
   <script>
   import axios from 'axios';
+  import Header from './Header.vue';
   export default {
+    components: {
+    Header
+    },
     name: 'Login',
     data() {
       return {
@@ -103,7 +111,15 @@
 
 <style scoped>
 .login-container{
-    max-width: 70%;
+    max-width: 50%;
     margin: auto;
+    position:relative; top:50px;
 }
+
+#login_button{
+  background-color: #0D0047;
+  color: rgb(255, 255, 255);
+}
+
+
 </style>
