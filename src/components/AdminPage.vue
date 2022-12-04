@@ -15,13 +15,16 @@
 
     <h2 id = "adminHeader"> Admin Page </h2>
 
-    <input type = "text" v-model="search" placeholder="Search Trips" /> <div id = "divbut"><button id = "addButton" class="btn btn-primary" @click=addModal>Add Destination</button></div>
+    <pre>{{''}}</pre>
+
+
+    <div id ='adminsearch'><input id = 'in2' size = 50 type = "search" v-model="search" placeholder="Search Trips..." /> <div id = "divbut"><button id = "addButton" class="btn btn-primary" @click=addModal>Add Destination</button></div></div>
 
    
 
   
       
-      <b-table striped hover responsive :items= "filteredTrips" :fields="fields">
+      <div id = 'tableadmin'><b-table striped hover responsive :items= "filteredTrips" :fields="fields">
         
 
         <template v-slot:cell(Edit)="data">
@@ -54,6 +57,7 @@
 
 
       </b-table>
+    </div>
       
     </div>
   </template>
@@ -224,5 +228,20 @@
     text-align: right;
 
   }
+  #adminsearch {
+    
+    text-align: center;
+    
+  }
+  #in2 {
+    border-radius: 100px;
+    border: 2px solid rgb(11, 70, 137);
+  
+  
+}
+#tableadmin {
+
+text-align: center;
+}
   </style>
   

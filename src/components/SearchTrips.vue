@@ -7,7 +7,7 @@
 
     <Header />
     <ModalRoot/> 
-
+    {{review}}
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
     
@@ -15,13 +15,13 @@
     <h2> Search Trips </h2>
     <pre>{{''}}</pre>
 
-    <div id = "search"><input id = "in" size = 50 type = "text" v-model="search" placeholder="Search Trips"/></div>
+    <div id = "search"><input id = "in" size = 50 type = "search" v-model="search" placeholder=" Search Trips..."/></div>
    
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
   
       
-      <b-table striped hover responsive :items= "filteredTrips" :fields="fields">
+     <div id = "table"> <b-table class = 'center' striped hover responsive :items= "filteredTrips" :fields="fields">
         
 
         <template v-slot:cell(MoreDetails)="data">
@@ -51,6 +51,7 @@
 
 
       </b-table>
+    </div>
       
     </div>
   </template>
@@ -62,7 +63,7 @@
   import ModalRoot from '@/Modal/ModalRoot.vue';
   import ModalService from '@/Modal/ModalService';
   import ReviewModal from '@/Modal/ReviewModal.vue';
-  import bus from '../main';
+  import { bus } from '../main';
 
 
   
@@ -72,10 +73,17 @@
    
     },
     name: "HelloWorld",
+    mounted() {
+
+        bus.$on("insertReview", (data) => {
+            this.review = data;
+        })
+    },
     created() {
         this.load();
         bus.$on("insertReview", (data) => {
-            this.title = data
+            this.review = data;
+            resolve(data);
         })
     },
     computed: {
@@ -87,7 +95,7 @@
     },
     data() {
         return {
-            
+            review : '',
             destinations: [],
             singleDestination: null,
             search: "",
@@ -116,9 +124,9 @@
     },
     methods: {
 
-        addModal() {
-      ModalService.open(ReviewModal);
-      console.log("hello there")
+    addModal() {
+        ModalService.open(ReviewModal);
+      
     },
 
       test(){
@@ -206,6 +214,16 @@
   a {
     color: #42b983;
   }
+  #in {
+    border-radius: 100px;
+    border: 2px solid rgb(11, 70, 137);
+  
+  
+}
+#table {
+
+    text-align: center;
+}
  
   </style>
   
