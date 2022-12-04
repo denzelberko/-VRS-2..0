@@ -220,18 +220,11 @@
   </b-button>
 
     
-    <b-table striped hover responsive :items="destinations" :fields="fields">
+    <div id = 'restable'><b-table striped hover responsive :items="destinations" :fields="fields">
       
       <template v-slot:cell(MoreDetails)="data">
-            <router-link :to="
-            {
-
-                name: 'TripPage',
-              
-                }"
-            tag="button"
-            class="btn btn-primary">More Details
-            </router-link>
+            
+        <button class="btn btn-primary" @click="getdestination(data.item.id)">More Details  </button>
     
 
 
@@ -239,6 +232,7 @@
         
       
     </b-table>
+  </div>
   </div>
   </div>
 </template>
@@ -302,6 +296,13 @@ export default {
   },
   
   methods: {
+
+    getdestination(destinationId){
+
+   
+    this.$router.push({ name: 'TripPage', params: { id: destinationId }})
+
+},
     init() {
       axios
         .get('http://localhost:8085/students')
@@ -363,5 +364,9 @@ li {
 }
 a {
   color: #42b983;
+}
+#restable {
+
+text-align: center;
 }
 </style>

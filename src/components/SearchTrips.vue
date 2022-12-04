@@ -140,7 +140,7 @@
 
         getdestination(destinationId){
 
-            //this.$router.push('http://localhost:3000/#/trippage/' + destinationId );
+           
             this.$router.push({ name: 'TripPage', params: { id: destinationId }})
         
         },
