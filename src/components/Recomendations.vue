@@ -139,31 +139,39 @@
 
 <table style="width:100%">
 <tr>
-<td style="width:25%">
+<td style="width:10%">
 <label>English Speaking</label>
+</td>
+<td style="width:15%">
     <select v-model="trip.language">
   <option v-for = "lang in imps">{{lang}}</option>
 
 </select>
 </td>
-<td style="width:25%">
+<td style="width:10%">
 <label>Food Quality</label>
+</td>
+<td style="width:15%">
     <select v-model="trip.food">
   <option v-for = "fd in imps">{{fd}}</option>
 
 </select>
 </td>
-<td style="width:25%">
+<td style="width:11%">
 
 <label>Quality of Attractions</label>
+</td>
+<td style="width:14%">
     <select v-model="trip.attractions">
   <option v-for = "attr in imps">{{attr}}</option>
 
 </select>
 </td>
 
-<td style="width:25%">
+<td style="width:10%">
 <label>Hotel Quality</label>
+</td>
+<td style="width:15%">
     <select v-model="trip.hotel">
   <option v-for = "hot in imps">{{hot}}</option>
 
@@ -171,26 +179,32 @@
 </td>
 </tr>
 <tr>
-<td style="width:25%">
+<td style="width:10%">
 
 <label>Picturesque</label>
+</td>
+<td style="width:15%">
     <select v-model="trip.instagramability">
   <option v-for = "insta in imps">{{insta}}</option>
 
 </select>
 
 </td>
-<td style="width:25%">
+<td style="width:10%">
 
 <label>Child-friendliness</label>
+</td>
+<td style="width:15%">
     <select v-model="trip.childFriendly">
   <option v-for = "child in imps">{{child}}</option>
 
 </select>
 </td>
-<td style="width:25%">
+<td style="width:11%">
 
 <label>Safety</label>
+</td>
+<td style="width:14%">
     <select v-model="trip.safety">
   <option v-for = "safe in imps">{{safe}}</option>
 
