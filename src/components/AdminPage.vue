@@ -1,16 +1,21 @@
+
 <template>
-    <div class="hello">
 
+
+    <div>
+     
       <Header/>
+      <ModalRoot/> 
+    
 
-      
+
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
 
     <h2 id = "adminHeader"> Admin Page </h2>
 
-    <input type = "text" v-model="search" placeholder="Search Trips"/>
+    <input type = "text" v-model="search" placeholder="Search Trips" /> <div id = "divbut"><button id = "addButton" class="btn btn-primary" @click=addModal>Add Destination</button></div>
 
    
 
@@ -56,12 +61,17 @@
   <script>
   import axios from 'axios';
   import Header from './Header.vue';
+  import ModalRoot from '@/Modal/ModalRoot.vue';
+  import ModalService from '@/Modal/ModalService';
+  import TestModal from '@/Modal/TestModal.vue';
+ 
 
   
   export default {
     components: {
-    Header
+    Header, ModalRoot
   },
+
     
     name: 'HelloWorld',
     created () {
@@ -106,6 +116,12 @@
     },
     
     methods: {
+
+      addModal() {
+      ModalService.open(TestModal);
+      console.log("hello there")
+    },
+
       init() {
         axios
           .get('http://localhost:8085/students')
@@ -194,6 +210,18 @@
   }
   #adminHeader {
     text-align: center;
+
+  }
+  #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
+#divbut {
+    text-align: right;
 
   }
   </style>

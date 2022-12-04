@@ -5,18 +5,20 @@
 
     
 
-    <app-header></app-header>
+    <Header />
+    <ModalRoot/> 
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
     
     
     <h2> Search Trips </h2>
+    <pre>{{''}}</pre>
 
-    <input id = "in" type = "text" v-model="search" placeholder="Search Trips"/>
-
+    <div id = "search"><input id = "in" size = 50 type = "text" v-model="search" placeholder="Search Trips"/></div>
    
-
+    <pre>{{''}}</pre>
+    <pre>{{''}}</pre>
   
       
       <b-table striped hover responsive :items= "filteredTrips" :fields="fields">
@@ -35,7 +37,7 @@
         
         <template v-slot:cell(AddReview)="data">
 
-            <button class = "btn btn-secondary" @click="addReview(data.item.id)">Add Review
+            <button class = "btn btn-secondary" @click="addModal">Add Review
             
         </button>
        
@@ -57,17 +59,24 @@
   import axios from 'axios';
   import Header from './Header.vue';
   import { EventBus } from '../main';
+  import ModalRoot from '@/Modal/ModalRoot.vue';
+  import ModalService from '@/Modal/ModalService';
+  import ReviewModal from '@/Modal/ReviewModal.vue';
+  import bus from '../main';
 
 
   
   export default {
     components: {
-    "app-header" : Header
+    Header , ModalRoot
    
     },
     name: "HelloWorld",
     created() {
         this.load();
+        bus.$on("insertReview", (data) => {
+            this.title = data
+        })
     },
     computed: {
         filteredTrips: function () {
@@ -106,6 +115,11 @@
         };
     },
     methods: {
+
+        addModal() {
+      ModalService.open(ReviewModal);
+      console.log("hello there")
+    },
 
       test(){
         
@@ -176,9 +190,10 @@
     font-weight: normal;
     text-align: center;
   }
-  #in {
-    font-weight: normal;
+  #search {
+    
     text-align: center;
+    
   }
   ul {
     list-style-type: none;

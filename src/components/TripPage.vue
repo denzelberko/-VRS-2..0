@@ -161,7 +161,7 @@
   export default {
    
     components: {
-    Header
+    Header, 
   },
     props: ['singleTrip'],
     name: 'HelloWorld',
@@ -202,6 +202,8 @@
     },
     
     methods: {
+
+     
       init() {
         axios
           .get('http://localhost:8085/students')
@@ -282,6 +284,7 @@
   #name {
     color: #3086ae;
     text-align: center;
+   
   }
 
   #hotelHead, #attractionHead, #specsHead {

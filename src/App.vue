@@ -1,26 +1,32 @@
 <template>
+
   <div>
- 
- 
-
-  
-  <b-container>
-    <br />
+    
     <router-view/>
-    </b-container>
-
   </div>
-  
+
   
   </template>
-  
+ 
   <script>
+  import ModalRoot from '@/Modal/ModalRoot.vue';
+  import ModalService from '@/Modal/Modalservice';
+  import TestModal from '@/Modal/TestModal.vue';
+  import AdminPage from './components/AdminPage.vue';
   
   export default{
-      name: "Header"
+      name: "App",
+      components: { ModalRoot, AdminPage },
+      methods: {
+        addModal() {
+          ModalService.open(TestModal);
+        }
+      }
   
   }
   </script>
+
+  
   <style>
    .nav a{
       background-color: #0D0047;
@@ -58,6 +64,14 @@
   body {
   background-color: #f2f2f2f2;
   }
+  #app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
   </style>
   
 
