@@ -27,7 +27,7 @@ export default new Router({
 
     },
     {
-      path: '/trippage',
+      path: '/trippage/:id',
       name: 'TripPage',
       component: TripPage
 

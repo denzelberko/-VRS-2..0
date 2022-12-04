@@ -3,16 +3,16 @@
   
     <div>
 
-    <Header/>
-      
-      
-      
-    <Trippage tripya = "hello"/>    
     
+
+    <app-header></app-header>
+
+    
+    <p>{{singleDestination}}</p>
     
     <h2> Search Trips </h2>
 
-    <input type = "text" v-model="search" placeholder="Search Trips"/>
+    <input id = "in" type = "text" v-model="search" placeholder="Search Trips"/>
 
    
 
@@ -22,15 +22,10 @@
         
 
         <template v-slot:cell(MoreDetails)="data">
-            <router-link :to="
-            {
-
-                name: 'TripPage',
-              
-                }"
-            tag="button"
-            class="btn btn-primary" @click="getdestination(data.item.id)">More Details
-            </router-link>
+            
+            
+            <button class="btn btn-primary" @click="getdestination(data.item.id)">More Details  </button>
+           
     
 
 
@@ -59,15 +54,15 @@
   
   <script>
   import axios from 'axios';
-  import TripPage from './TripPage.vue';
   import Header from './Header.vue';
+  import { EventBus } from '../main';
 
 
   
   export default {
     components: {
-    Header,
-    TripPage
+    "app-header" : Header
+   
     },
     name: "HelloWorld",
     created() {
@@ -82,8 +77,9 @@
     },
     data() {
         return {
+            
             destinations: [],
-            singleDestination: [],
+            singleDestination: null,
             search: "",
             //field key must match attribute of object
             fields: [
@@ -110,12 +106,19 @@
     },
     methods: {
 
+      test(){
+        
+        EventBus.$emit('trip-data', 'Denzel Berko');
+
+      },
+
+      
+
         getdestination(destinationId){
 
-          axios
-                .get("http://localhost:8085/destinations/" + destinationId)
-                .then(response => (this.singleDestination = response.data));
-
+            //this.$router.push('http://localhost:3000/#/trippage/' + destinationId );
+            this.$router.push({ name: 'TripPage', params: { id: destinationId }})
+        
         },
 
         init() {
@@ -170,6 +173,11 @@
   <style scoped>
   h1, h2 {
     font-weight: normal;
+    text-align: center;
+  }
+  #in {
+    font-weight: normal;
+    text-align: center;
   }
   ul {
     list-style-type: none;
@@ -182,5 +190,6 @@
   a {
     color: #42b983;
   }
+ 
   </style>
   

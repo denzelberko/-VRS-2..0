@@ -7,6 +7,8 @@
     <pre>{{''}}</pre>
   <h2 class = "center"> Trip Parameters </h2>
 
+  
+
 
 <label>What is your price range?</label>
     <select v-model="trip.priceRange">
@@ -203,6 +205,7 @@ export default {
   data () {
     return {
       destinations: null,
+     
       //field key must match attribute of object
       fields: [
       {key: 'rank', label: 'Rank', sortable: false},
@@ -289,7 +292,8 @@ export default {
           console.log(error);
         });
     }
-  }
+  },
+  
 }
 </script>
 
