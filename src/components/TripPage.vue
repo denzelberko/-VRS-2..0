@@ -3,37 +3,48 @@
     <Header/>
 
     
-    
+    <div style="margin-left: 10%; margin-right: 10%;">
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
+    
     <h1 id= "name">{{singleDestination.name}}</h1>
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
-    <img :src="singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="400" height="300"> 
+    <!--<img :src="singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="400" height="300"> -->
+    <img src= "https://upload.wikimedia.org/wikipedia/commons/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg" class="center" alt="INSERT PICTURE" width="960" height="540"> 
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
-    <h2 id = "attractionHead"><u>Attractions</u></h2>
+    <div>
+    <h3 id = "attractionHead" style ="text-decoration:none;" ><u>Attractions</u></h3>
+    </div>
     
     <pre>{{''}}</pre>
     
     <ul>
-
-    <div v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> <pre>{{''}}</pre> 
     
-    <p><b>Description:</b></p>
+    <div v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> <pre>{{''}}</pre> 
+    <table style = "width: 100%;">
+      <tr>
+        <td style = "width: 21%"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/9-11_Memorial_and_Museum_%2828815276064%29.jpg/1920px-9-11_Memorial_and_Museum_%2828815276064%29.jpg" alt="INSERT PICTURE" width="300" height="200">
+        <!--<img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> --></td>
+    <td>
+        <p><b>Description:</b></p>
 
     <p>{{attraction.description}}</p>
     
     <p><b>Type of attraction: </b>{{attraction.type}}</p>
-    <p><b>Hous to visit: </b>{{attraction.hoursToVisit}}</p>
-    <p><b>Cost: </b>{{attraction.cost}}</p>
-    <img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> 
-
+    <p><b>Hours to visit: </b>{{attraction.hoursToVisit}}</p>
+    <p><b>Cost:</b> ${{attraction.cost}}</p>
+    
+    </td>
+    </tr>
+    </table>
+    
     <pre>{{''}}</pre> 
     <pre>{{''}}</pre> 
     
@@ -93,7 +104,7 @@
     
 
     
-    <p><b>Instagram Ability Score: </b> {{singleDestination.instagramAbilityScore}}</p>
+    <p><b>Instagramability Score: </b> {{singleDestination.instagramAbilityScore}}</p>
 
     <pre>{{''}}</pre>
     
@@ -153,7 +164,7 @@
     <p><b>Safety Score: </b> {{singleDestination.safetyScore}}</p>
 
     <pre>{{''}}</pre>
-     
+  </div>
     </div>
   </template>
   
@@ -276,6 +287,9 @@
   h1, h2 {
     font-weight: normal;
   }
+  h3 {
+    text-decoration:line-through;
+  }
   ul {
     list-style-type: none;
     padding: 0;
@@ -301,8 +315,24 @@
 
 
   #hotelHead, #attractionHead, #specsHead {
-    color: #1b526a;
     text-align: center;
+    background-color:#e4e4e4f2;
+    padding: 5px;
+    text-decoration: none;
+    color: #0D0047;
+  }
+
+  #name{
+    background-color: #0D0047;
+    padding: 20px 20px;
+    color: #ffffff;
+  }
+
+  #attractionHead{
+    background-color:#e4e4e4f2;
+    padding: 5px;
+    text-decoration: none;
+    color: #0D0047;
   }
  
   </style>
