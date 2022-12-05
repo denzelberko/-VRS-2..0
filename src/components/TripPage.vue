@@ -26,31 +26,21 @@
     <pre>{{''}}</pre>
     
     <ul>
-    
-    <div v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> <pre>{{''}}</pre> 
-    <table style = "width: 100%;">
-      <tr>
-        <td style = "width: 21%"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/9-11_Memorial_and_Museum_%2828815276064%29.jpg/1920px-9-11_Memorial_and_Museum_%2828815276064%29.jpg" alt="INSERT PICTURE" width="300" height="200">
+    <div class = "scroller" >
+    <div class = "media" v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> <pre>{{''}}</pre> 
+        <td style = "align-content: center; width: 21%"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/9-11_Memorial_and_Museum_%2828815276064%29.jpg/1920px-9-11_Memorial_and_Museum_%2828815276064%29.jpg" alt="INSERT PICTURE" width="550" height="360">
         <!--<img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> --></td>
-    <td>
         <p><b>Description:</b></p>
 
     <p>{{attraction.description}}</p>
-    
     <p><b>Type of attraction: </b>{{attraction.type}}</p>
     <p><b>Hours to visit: </b>{{attraction.hoursToVisit}}</p>
     <p><b>Cost:</b> ${{attraction.cost}}</p>
     
-    </td>
-    </tr>
-    </table>
-    
-    <pre>{{''}}</pre> 
-    <pre>{{''}}</pre> 
     
 
     </div>
-      
+    </div>  
     </ul>
 
 
@@ -76,11 +66,13 @@
     
     <h2 id = "specsHead"><u>Specifications</u></h2>
     
-    <pre>{{''}}</pre>
-    <pre>{{''}}</pre>
 
+    <table style = "width: 100%">
+      <tr>
+        <td style = "width: 20%">
     <p><b>Weather: </b> {{singleDestination.weather}}</p>
-   
+  </td>
+  <td style = "width: 20%">
 
     <pre>{{''}}</pre>
     
@@ -90,80 +82,104 @@
 
     <pre>{{''}}</pre>
     
-
+  </td>
+  <td style = "width: 20%">
     
     <p><b>Food Quality Score: </b> {{singleDestination.foodQualityScore}}</p>
 
     <pre>{{''}}</pre>
     
-
+  </td>
+  <td style = "width: 20%">
    
     <p><b>Price Index: </b> {{singleDestination.priceIndex}}</p>
 
     <pre>{{''}}</pre>
     
-
+  </td>
+  <td style = "width: 20%">
     
     <p><b>Instagramability Score: </b> {{singleDestination.instagramAbilityScore}}</p>
 
     <pre>{{''}}</pre>
     
 
-
+  </td>
+  </tr>
+  <tr>
+    <td style = "width: 20%">
     <p><b>Native Language: </b> {{singleDestination.nativeLanguage}}</p>
 
    
     <pre>{{''}}</pre>
-
+  </td>
+  <td style = "width: 20%">
   
     <p><b>Purpose: </b> {{singleDestination.purpose}}</p>
 
     
     <pre>{{''}}</pre>
-
+  </td>
+  <td style = "width: 20%">
    
     <p><b>Hotel Quality Score: </b> {{singleDestination.hotelQualityScore}}</p>
    
    
     <pre>{{''}}</pre>
 
+
+  </td>
+  <td style = "width: 20%">
+
     <p><b>Country: </b> {{singleDestination.country}}</p>
 
     
     <pre>{{''}}</pre>
 
+  </td>
+  <td style = "width: 20%">
     
     <p><b>Continent: </b> {{singleDestination.continent}}</p>
 
     <pre>{{''}}</pre>
-
-    
+</td>
+</tr>
+<tr>
+    <td style = "width: 20%">
     <p><b>Popularity: </b> {{singleDestination.popularity}}</p>
 
   
     <pre>{{''}}</pre>
 
-   
+  </td>
+  <td style = "width: 20%">
     <p><b>Rec Trip Length: </b> {{singleDestination.recTripLength}}</p>
 
   
     <pre>{{''}}</pre>
-
+  </td>
+  <td style = "width: 20%">
   
     <p><b>Currency: </b> {{singleDestination.currency}}</p>
 
     <pre>{{''}}</pre>
-
+  </td>
+  <td style = "width: 20%">
   
     <p><b>Attraction Score: </b> {{singleDestination.attractionScore}}</p>
 
-  
+  </td>
+  <td style = "width: 20%">
     <pre>{{''}}</pre>
 
     
     <p><b>Safety Score: </b> {{singleDestination.safetyScore}}</p>
 
     <pre>{{''}}</pre>
+  </td>
+  </tr>
+  </table>
+
   </div>
     </div>
   </template>
@@ -334,6 +350,27 @@
     text-decoration: none;
     color: #0D0047;
   }
+
+  .scroller{
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 45%;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+  }
+  .media{
+    display: grid;
+    grid-template-rows: min-content;
+    gap: 1%;
+    margin-right: 5%;
+    margin-left: 5%;
+    padding: 5% 5%;
+    background: #f8f8f8;
+    border-radius: 5%;
+    box-shadow: 2%;
+  }
+  
+
  
   </style>
   
