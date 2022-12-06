@@ -67,6 +67,12 @@
   import {EventBus} from '../main';
   import ReviewModal from '../Modal/ReviewModal.vue';
 
+  const uuid = require('uuid');
+
+  
+
+
+
 
   
   export default {
@@ -80,7 +86,10 @@
     created() {
         this.load();
         EventBus.$on("sendMessage", (data) => {
-            this.review.message = data;
+            
+            this.reviewMessage = data;
+            
+            
             
         
              
@@ -88,11 +97,17 @@
         }),
         EventBus.$on("sendRating", (data) => {
             
-            this.review.rating = parseFloat(data)
-            axios.post('http://localhost:8085/reviews', this.review)
-        
+           
             
             
+            axios.post('http://localhost:8085/reviews', {
+                
+                "reviewId": this.reviewId,
+                "destinationId": parseFloat(this.destinationId),
+                "rating": parseFloat(data),
+                "message": this.reviewMessage
+            })
+    
         })
     },
     computed: {
@@ -102,20 +117,18 @@
             });
         }
     },
+
     data() {
         return {
-            review : {
-                
-                reviewId: '',
-                destinationId: '',
-                rating: '',
-                message: ''
-            },
+            
+            
+            reviewMessage: '',
             idCounter: 1,
             destinations: [],
             singleDestination: null,
             search: "",
             reviewId: '',
+            destinationId: '',
             //field key must match attribute of object
             fields: [
                 { key: "id", label: "Trip ID" },
@@ -143,10 +156,11 @@
 
     setIdAndDestination(id){
 
-        this.review.reviewId = parseFloat(this.idCounter);
-        this.review.destinationId = id
-        this.idCounter += 1;
 
+        const uniqueId = uuid.v4();
+        this.reviewId = String(uniqueId);
+        this.destinationId = id
+        
     },
 
     addModal() {
@@ -159,6 +173,7 @@
 
            
             this.$router.push({ name: 'TripPage', params: { id: destinationId }})
+            EventBus.$off()
         
         },
 

@@ -19,6 +19,7 @@
     "bootstrap": "^5.2.3",
     "bootstrap-vue": "^2.22.0",
     "project": "^0.1.6",
+    "uuid": "^9.0.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

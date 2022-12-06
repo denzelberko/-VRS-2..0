@@ -182,7 +182,18 @@
 
   <h2 id = "reviewHead"><u>Reviews</u></h2>
 
-  <p>{{singleDestination.reviews}}</p>
+  <ul>
+
+<div v-for='review in reviews'> <h4>{{review.message}}</h4> <pre>{{''}}</pre> 
+
+
+<p><b>Rating:</b> {{review.rating}}</p>
+<pre>{{''}}</pre> 
+<pre>{{''}}</pre> 
+
+</div>
+  
+</ul>
 
   </div>
     </div>
@@ -214,6 +225,7 @@
         destinations: null,
         hotels: null, 
         attractions: null,
+        reviews: null,
         //field key must match attribute of object
         fields: [
         {key: 'id', label: 'Trip ID', sortable: true},
@@ -241,63 +253,20 @@
     methods: {
 
      
-      init() {
-        axios
-          .get('http://localhost:8085/students')
-          .then(response => (this.students = response.data))
-      },
+     
       loadSingleDestination(id) {
 
           
             axios
                 .get("http://localhost:8085/destinations/" + id)
-                .then(response => (this.singleDestination = response.data,this.hotels = response.data.hotels, this.attractions = response.data.attractions));
+                .then(response => (this.singleDestination = response.data, this.hotels = response.data.hotels, this.attractions = response.data.attractions, this.reviews = response.data.reviews));
               
         },
 
   
-      search(price, purpose, weather){
-         
-        axios
-          .get('http://localhost:8085/destinations/'+price +'/'+ purpose+'/'+weather) 
-          .then(response => (this.destinations = response.data))
-  
-      },
-      edit(item, index, button) {
-        this.form.id = item.id
-        this.form.email = item.email
-        this.form.first_name = item.firstName
-        this.form.last_name = item.lastName
-      },
-      resetEditModal() {
-        this.form.id=''
-        this.form.email=''
-        this.form.first_name=''
-        this.form.last_name=''
-      },
-      onSave(event) {
-        var numId;
-        numId = parseInt(this.form.id);
-        axios
-          .put('http://localhost:8085/students/' + numId, {
-            "id": numId,
-            "firstName": this.form.first_name,
-            "lastName": this.form.last_name,
-            "email": this.form.email,
-          })
-          .then(() => this.init())
-          .catch(function (error) {
-            console.log(error);
-          });
-      }
     },
-    created() {
-      EventBus.$on('tripData', (data) => {
-        this.tripData = data;
-        console.log(data)
-
-      })
-    }
+   
+   
   }
   </script>
   

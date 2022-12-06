@@ -1,6 +1,6 @@
 <template>
     <div class='nav'>
-    <c>Vacation Recommender</c>
+    <c id = "c">Vacation Recommender</c>
     <a href='http://localhost:3000/#/'>Home</a>
     <a href='http://localhost:3000/#/recommendations/'>Recommendations</a>
     <a href='http://localhost:3000/#/searchtrips'>Search Trips</a>
@@ -19,7 +19,7 @@
         background-color: #0D0047;
         overflow: hidden;
      }
-     .nav c {
+     #c {
         color: #f2f2f2f2;
         padding: 20px 30px;
         text-align: center;

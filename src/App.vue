@@ -3,6 +3,7 @@
   <div>
     
     <router-view/>
+
   </div>
 
   
@@ -13,10 +14,12 @@
   import ModalService from '@/Modal/Modalservice';
   import TestModal from '@/Modal/TestModal.vue';
   import AdminPage from './components/AdminPage.vue';
+  import SearchTrips from './components/SearchTrips.vue';
+
   
   export default{
       name: "App",
-      components: { ModalRoot, AdminPage },
+      components: { ModalRoot, AdminPage, SearchTrips},
       methods: {
         addModal() {
           ModalService.open(TestModal);

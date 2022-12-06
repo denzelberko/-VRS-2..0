@@ -48,26 +48,21 @@
     },
     created(){
 
-      EventBus.$on("tripId", (data) => {
-            this.tripId = data;
-            
-        });
+  
 
     },
     mounted(){
 
-      EventBus.$on("tripId", (data) => {
-            this.tripId = data;
-            
-        });
 
     },
     methods: {
 
       insertReview(){
+       
         EventBus.$emit('sendMessage', this.message)
         EventBus.$emit('sendRating', this.rating);
-      
+        
+        
       }
 
     },
