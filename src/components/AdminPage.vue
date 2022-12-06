@@ -20,7 +20,12 @@
 
 
     <div id ='adminsearch'><input id = 'in2' size = 50 type = "search" v-model="search" placeholder="Search Trips..." /> 
-    <div id = "divbut"><button id = "addButton" class="btn btn-primary" @click="addDestModal()"> Add Destination</button></div></div>
+      <pre>{{''}}</pre>
+    <button id = "addDestButton" class="btn btn-primary" @click="addDestModal()"> Add Destination</button>
+    <button id = "addAttrButton" class="btn btn-primary" @click="addAttrModal()"> Add Attraction</button>
+    <button id = "addHotButton" class="btn btn-primary" @click="addHotModal()"> Add Hotel</button>
+      <pre>{{''}}</pre>
+  </div>
 
    
 
@@ -58,8 +63,10 @@
   import ModalService from '@/Modal/ModalService';
   import TestModal from '@/Modal/TestModal.vue';
   import {EventBus} from '../main';
-import CreateDestModal from '../Modal/CreateDestModal.vue';
-import EditDestModal from '../Modal/EditDestModal.vue';
+  import CreateDestModal from '../Modal/CreateDestModal.vue';
+  import EditDestModal from '../Modal/EditDestModal.vue';
+  import CreateAttrModal from '../Modal/CreateAttrModal.vue';
+  import CreateHotModal from '../Modal/CreateHotModal.vue';
  
 
   
@@ -130,6 +137,14 @@ import EditDestModal from '../Modal/EditDestModal.vue';
 
       editDestModal() {
         ModalService.open(EditDestModal);
+    },
+
+    addAttrModal() {
+        ModalService.open(CreateAttrModal);
+    },
+
+    addHotModal() {
+        ModalService.open(CreateHotModal);
     },
 
       init() {

@@ -578,7 +578,7 @@
             ).then(response => {
               console.log('Submit Success')
             }).catch(e => {
-              console.log(this.trip.attractionScore)
+              console.log('Submit Failed')
             });
       }
 
