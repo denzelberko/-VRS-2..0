@@ -5,7 +5,8 @@
     <div>
      
       <Header/>
-      <ModalRoot/> 
+      <ModalRoot/>
+      <CreateDestModal/> 
     
 
 
@@ -18,28 +19,16 @@
     <pre>{{''}}</pre>
 
 
-    <div id ='adminsearch'><input id = 'in2' size = 50 type = "search" v-model="search" placeholder="Search Trips..." /> <div id = "divbut"><button id = "addButton" class="btn btn-primary" @click=addModal>Add Destination</button></div></div>
+    <div id ='adminsearch'><input id = 'in2' size = 50 type = "search" v-model="search" placeholder="Search Trips..." /> 
+    <div id = "divbut"><button id = "addButton" class="btn btn-primary" @click="addDestModal()"> Add Destination</button></div></div>
 
    
 
   
       
       <div id = 'tableadmin'><b-table striped hover responsive :items= "filteredTrips" :fields="fields">
-        
-
         <template v-slot:cell(Edit)="data">
-            <router-link :to="
-            {
-
-                name: 'AdminPage',
-              
-                }"
-            tag="button"
-            class="btn btn-success">Edit
-            </router-link>
-    
-
-
+            <button class = "btn btn-secondary" @click="editDestModal() ; setTempId(data.item.id);">Edit</button>
         </template>
 
         
@@ -68,19 +57,27 @@
   import ModalRoot from '@/Modal/ModalRoot.vue';
   import ModalService from '@/Modal/ModalService';
   import TestModal from '@/Modal/TestModal.vue';
+  import {EventBus} from '../main';
+import CreateDestModal from '../Modal/CreateDestModal.vue';
+import EditDestModal from '../Modal/EditDestModal.vue';
  
 
   
   export default {
     components: {
-    Header, ModalRoot
-  },
+    Header,
+    ModalRoot,
+    CreateDestModal
+},
 
     
     name: 'HelloWorld',
     created () {
         this.load()
-
+        EventBus.$on("editDestination", (data) => {
+          console.log(data)
+            axios.put('http://localhost:8085/destinations/' + this.tempId, data)
+        })
     },
     computed: {
         filteredTrips : function(){
@@ -93,6 +90,7 @@
     },
     data () {
       return {
+        tempId: "",
         destinations: [],
         search: "",
         //field key must match attribute of object
@@ -121,9 +119,17 @@
     
     methods: {
 
-      addModal() {
-      ModalService.open(TestModal);
-      console.log("hello there")
+      setTempId(id){
+        this.tempId = id
+        console.log(this.tempId)
+    },
+
+      addDestModal() {
+        ModalService.open(CreateDestModal);
+    },
+
+      editDestModal() {
+        ModalService.open(EditDestModal);
     },
 
       init() {

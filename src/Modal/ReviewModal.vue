@@ -5,12 +5,13 @@
       </ModalHeader>
       <ModalBody>
 
-        <select v-model="rating">
-       <option placeholder = "Give this trip a rating!" ></option>
-      <option v-for = "rating in ratingChoices">{{rating}}</option>
+      <label for="rating">Give this trip a rating:</label>
+      <select v-model="rating" id="rating">
+        <option placeholder = "Give this trip a rating!" ></option>
+        <option v-for = "rating in ratingChoices">{{rating}}</option>
       </select>
-
-        <textarea v-model= "message" rows="4" cols="60" class="textarea1" placeholder = "Enter your review!"></textarea> 
+      <pre></pre>
+      <textarea v-model= "message" rows="4" cols="40" class="textarea1" placeholder = "Enter your review!"></textarea> 
       
         
       </ModalBody>

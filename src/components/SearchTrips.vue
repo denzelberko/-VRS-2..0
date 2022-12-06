@@ -107,7 +107,7 @@
             review : {
                 
                 reviewId: '',
-                destination: '',
+                destinationId: '',
                 rating: '',
                 message: ''
             },
@@ -144,9 +144,8 @@
     setIdAndDestination(id){
 
         this.review.reviewId = parseFloat(this.idCounter);
+        this.review.destinationId = id
         this.idCounter += 1;
-        axios.get("http://localhost:8085/destinations/" + id)
-            .then(response => (this.review.destination = response.data));
 
     },
 
