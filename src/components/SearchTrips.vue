@@ -12,6 +12,8 @@
     
     
     <h2> Search Trips </h2>
+
+   
     <pre>{{''}}</pre>
 
     
@@ -38,7 +40,7 @@
         
         <template v-slot:cell(AddReview)="data">
 
-            <button class = "btn btn-secondary" @click="addModal() ; setId(data.item.id);">Add Review
+            <button class = "btn btn-secondary" @click="addModal() ; setIdAndDestination(data.item.id);">Add Review
             
         </button>
        
@@ -77,12 +79,21 @@
    
     created() {
         this.load();
-        EventBus.$on("insertReview", (data) => {
-            this.review = data;
-            //put an axios put request here and set the destination review using the reviewId and review variables
+        EventBus.$on("sendMessage", (data) => {
+            this.review.message = data;
+            
+        
+             
+            
+        }),
+        EventBus.$on("sendRating", (data) => {
+            
+            this.review.rating = parseFloat(data)
+            axios.post('http://localhost:8085/reviews', this.review)
+        
             
             
-        });
+        })
     },
     computed: {
         filteredTrips: function () {
@@ -93,7 +104,14 @@
     },
     data() {
         return {
-            review : '',
+            review : {
+                
+                reviewId: '',
+                destination: '',
+                rating: '',
+                message: ''
+            },
+            idCounter: 1,
             destinations: [],
             singleDestination: null,
             search: "",
@@ -123,12 +141,12 @@
     },
     methods: {
 
-    setId(id){
+    setIdAndDestination(id){
 
-        this.reviewId = id;
-
-        
-    
+        this.review.reviewId = parseFloat(this.idCounter);
+        this.idCounter += 1;
+        axios.get("http://localhost:8085/destinations/" + id)
+            .then(response => (this.review.destination = response.data));
 
     },
 

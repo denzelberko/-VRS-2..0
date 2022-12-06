@@ -180,6 +180,10 @@
   </tr>
   </table>
 
+  <h2 id = "reviewHead"><u>Reviews</u></h2>
+
+  <p>{{singleDestination.reviews}}</p>
+
   </div>
     </div>
   </template>
@@ -330,7 +334,7 @@
   }
 
 
-  #hotelHead, #attractionHead, #specsHead {
+  #hotelHead, #attractionHead, #specsHead, #reviewHead {
     text-align: center;
     background-color:#e4e4e4f2;
     padding: 5px;

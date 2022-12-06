@@ -4,13 +4,20 @@
         <h3>Add Review</h3>
       </ModalHeader>
       <ModalBody>
-        <textarea v-model= "review" rows="4" cols="60" class="textarea1" placeholder = "Enter your review!"></textarea> 
-        {{tripId}}
+
+        <select v-model="rating">
+       <option placeholder = "Give this trip a rating!" ></option>
+      <option v-for = "rating in ratingChoices">{{rating}}</option>
+      </select>
+
+        <textarea v-model= "message" rows="4" cols="60" class="textarea1" placeholder = "Enter your review!"></textarea> 
+      
         
       </ModalBody>
       <ModalFooter>
+       
         <button @click="close('Modal closed')" class="btn btn-danger">Cancel</button>
-        <button @click="dismiss('Modal dismissed'); insertReview(review);" class="btn btn-primary">Add Review</button>
+        <button @click="dismiss('Modal dismissed'); insertReview();" class="btn btn-primary">Add Review</button>
         
       </ModalFooter>
     </Modal>
@@ -28,8 +35,12 @@
   export default {
     data() {
         return {
+            ratingChoices: [1,2,3,4,5],
             tripId: '',
-            review: "",
+            message: '',
+            rating: '',
+          
+            
             
            
         };
@@ -52,8 +63,9 @@
     },
     methods: {
 
-      insertReview(review){
-        EventBus.$emit('insertReview', review);
+      insertReview(){
+        EventBus.$emit('sendMessage', this.message)
+        EventBus.$emit('sendRating', this.rating);
       
       }
 
