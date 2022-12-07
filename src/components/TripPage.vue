@@ -53,12 +53,7 @@
     
     <ul>
 
-    <div class = "scroller" >
-    <div class = "media" v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
-        <td style = "align-content: center; width: 21%"><img v-bind:src= "hotel.imageURL" alt="INSERT PICTURE" width="550" height="360">
-        <!--<img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> --></td>
-
-   
+    <div v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
 
     <p><b>Cost:</b>{{hotel.cost}}</p>
     <p><b>Rating:</b> {{hotel.rating}}</p>
@@ -66,8 +61,6 @@
     <pre>{{''}}</pre> 
 
     </div>
-    </div>
-   
       
     </ul>
     
