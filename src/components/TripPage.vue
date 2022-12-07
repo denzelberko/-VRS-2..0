@@ -14,7 +14,7 @@
     <pre>{{''}}</pre>
 
    
-    <img v-bind:src= "singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="960" height="540"> 
+    <img v-bind:src= "singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="960" height="540" id= "img"> 
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
@@ -27,8 +27,8 @@
     
     <ul>
     <div class = "scroller" >
-    <div class = "media" v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> <pre>{{''}}</pre> 
-        <td style = "align-content: center; width: 21%"><img v-bind:src= "attraction.imageURL" alt="INSERT PICTURE" width="550" height="360">
+    <div class = "media" v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> 
+        <td style = "align-content: center; width: 21%"><img v-bind:src= "attraction.imageURL" alt="INSERT PICTURE" width="590" height="442.5" id="img">
         <!--<img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> --></td>
         <p><b>Description:</b></p>
 
@@ -36,6 +36,7 @@
     <p><b>Type of attraction: </b>{{attraction.type}}</p>
     <p><b>Hours to visit: </b>{{attraction.hoursToVisit}}</p>
     <p><b>Cost:</b> ${{attraction.cost}}</p>
+    <br>
     
     
 
@@ -55,7 +56,7 @@
 
     <div v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
 
-    <p><b>Cost:</b>{{hotel.cost}}</p>
+    <p><b>Cost: $</b>{{hotel.cost}}</p>
     <p><b>Rating:</b> {{hotel.rating}}</p>
     <pre>{{''}}</pre> 
     <pre>{{''}}</pre> 
@@ -328,8 +329,9 @@
   .scroller{
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 45%;
-    overflow-x: auto;
+    grid-auto-columns: 48%;
+    overflow-x: scroll;
+    overflow-y: hidden;
     overscroll-behavior-inline: contain;
   }
   .media{
@@ -342,6 +344,10 @@
     background: #f8f8f8;
     border-radius: 5%;
     box-shadow: 2%;
+  }
+
+  #img{
+    object-fit: cover;
   }
   
 

@@ -36,7 +36,14 @@ export default new Router({
     {
       path: '/adminpage',
       name: 'AdminPage',
-      component: AdminPage
+      component: AdminPage,
+
+      beforeEnter: (to, from, next) => {
+        const isRedirected = from.name === 'login';
+        if (isRedirected == true) {
+          next()
+        } 
+      }
 
     },
     {

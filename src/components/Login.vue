@@ -23,9 +23,6 @@
             placeholder="password"
           />
         </div>
-        <div class="alternative-option mt-4">
-          You don't have an account? <span @click="moveToRegister">Register</span>
-        </div>
         <button type="submit" class="mt-4 btn-pers" id="login_button">
           Login
         </button>
@@ -66,6 +63,9 @@
       login(submitEvent) {
         this.id = submitEvent.target.elements.id.value;
         this.password = submitEvent.target.elements.password.value;
+        if (this.id == "AdminUser" && this.password == "AdminPass"){
+          this.$router.push({path: '/AdminPage'});
+        }
         axios.all([
             axios.get('http://localhost:8085/students/'+submitEvent.target.elements.id.value)
             .catch(
@@ -102,9 +102,7 @@
         }));
 
       },
-      moveToRegister() {
-        this.$router.push("/register");
-      },
+      
     },
   };
   </script>
