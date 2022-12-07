@@ -14,7 +14,7 @@
     <pre>{{''}}</pre>
 
    
-    <img v-bind:src= "singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="960" height="540" id= "img"> 
+    <img v-bind:src= "singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="100%" height="100%" id= "img"> 
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
@@ -28,7 +28,7 @@
     <ul>
     <div class = "scroller" >
     <div class = "media" v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> 
-        <td style = "align-content: center; width: 21%"><img v-bind:src= "attraction.imageURL" alt="INSERT PICTURE" width="590" height="442.5" id="img">
+        <td style = "align-content: center; width: 21%"><img v-bind:src= "attraction.imageURL" alt="INSERT PICTURE" width="478%" height="100%" id="img">
         <!--<img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> --></td>
         <p><b>Description:</b></p>
 
@@ -348,6 +348,7 @@
 
   #img{
     object-fit: cover;
+    aspect-ratio: 4 / 3;
   }
   
 
