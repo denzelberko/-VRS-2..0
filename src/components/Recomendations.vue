@@ -8,7 +8,7 @@
   <div style="margin-left: 10%; margin-right: 10%;">
   <h2 class = "center"> Trip Parameters </h2>
 
-  
+  <label>Please indicate your preference for each of the following parameters, followed by how important it is for your trip to follow that preference:</label>  
 
 <table style="width:100%">
   <tr>
@@ -114,7 +114,7 @@
 </td>
 
 <td style="width:7%">
-<label>Busyness</label>
+<label>Popularity:</label>
 </td>
     <td style="width:8%">
     <select v-model="trip.busyLevel" style=" width: 115px">
@@ -136,6 +136,8 @@
 
 <br>
 <br>
+
+<label>Please indicate the importance for your trip to score well in each of the following categories:</label>
 
 <table style="width:100%">
 <tr>
@@ -216,7 +218,7 @@
 
 
     <b-button @click="search(trip.priceRange, trip.priceRangeImp, trip.tripLength, trip.tripLengthImp, trip.continent, trip.continentImp, trip.purpose, trip.purposeImp, trip.climate, trip.climateImp, trip.busyLevel, trip.busyLevelImp, trip.language, trip.food, trip.attractions, trip.hotel, trip.instagramability, trip.childFriendly, trip.safety) ">
-          Search Parameters
+          Get Recommendations
   </b-button>
 
     
