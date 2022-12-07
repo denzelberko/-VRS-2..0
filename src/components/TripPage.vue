@@ -2,7 +2,7 @@
     <div>
     <Header/>
 
-    
+  
     <div style="margin-left: 10%; margin-right: 10%;">
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
@@ -13,8 +13,8 @@
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
 
-    <!--<img :src="singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="400" height="300"> -->
-    <img src= "https://upload.wikimedia.org/wikipedia/commons/0/05/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu.jpg" class="center" alt="INSERT PICTURE" width="960" height="540"> 
+   
+    <img v-bind:src= "singleDestination.imageURL" class="center" alt="INSERT PICTURE" width="960" height="540"> 
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
@@ -28,7 +28,7 @@
     <ul>
     <div class = "scroller" >
     <div class = "media" v-for='attraction in attractions'> <h4>{{attraction.name}}</h4> <pre>{{''}}</pre> 
-        <td style = "align-content: center; width: 21%"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/9-11_Memorial_and_Museum_%2828815276064%29.jpg/1920px-9-11_Memorial_and_Museum_%2828815276064%29.jpg" alt="INSERT PICTURE" width="550" height="360">
+        <td style = "align-content: center; width: 21%"><img v-bind:src= "attraction.imageURL" alt="INSERT PICTURE" width="550" height="360">
         <!--<img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> --></td>
         <p><b>Description:</b></p>
 
@@ -53,7 +53,12 @@
     
     <ul>
 
-    <div v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
+    <div class = "scroller" >
+    <div class = "media" v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
+        <td style = "align-content: center; width: 21%"><img v-bind:src= "hotel.imageURL" alt="INSERT PICTURE" width="550" height="360">
+        <!--<img :src="attraction.imageURL" alt="INSERT PICTURE" width="300" height="200"> --></td>
+
+   
 
     <p><b>Cost:</b>{{hotel.cost}}</p>
     <p><b>Rating:</b> {{hotel.rating}}</p>
@@ -61,6 +66,8 @@
     <pre>{{''}}</pre> 
 
     </div>
+    </div>
+   
       
     </ul>
     
@@ -265,8 +272,9 @@
 
   
     },
-   
-   
+    created() {
+    
+    }
   }
   </script>
   
