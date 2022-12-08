@@ -45,11 +45,21 @@
         </button>
        
             
-          
-    
 
 
         </template>
+        <template v-slot:cell(Tickets)="data">
+
+            <a href="https://www.travelocity.ca/Flights">
+   <button class = "btn btn-success">Get Tickets</button>
+</a>
+
+
+
+
+
+
+</template>
      
 
 
@@ -135,6 +145,7 @@
                 { key: "name", label: "Destination Name" },
                 { key: "MoreDetails", label: "More Details" },
                 { key: "AddReview", label: "Add Review" },
+                { key: "Tickets", label: "Tickets" }
             ],
             form: {
                 email: "",
@@ -163,6 +174,7 @@
         
     },
 
+  
     addModal() {
         ModalService.open(ReviewModal);
       

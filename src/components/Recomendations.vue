@@ -230,7 +230,20 @@
     
 
 
-        </template>  
+        </template> 
+        
+        <template v-slot:cell(Tickets)="data">
+
+<a href="https://www.travelocity.ca/Flights">
+<button class = "btn btn-success">Get Tickets</button>
+</a>
+
+
+
+
+
+
+</template>
         
       
     </b-table>
@@ -257,7 +270,8 @@ export default {
       {key: 'rank', label: 'Rank', sortable: false},
       {key: 'name', label: 'Destination', sortable: false},
       {key: 'score', label: 'Score', sortable: false},
-      {key: 'MoreDetails', label: 'More Details'}
+      {key: 'MoreDetails', label: 'More Details'},
+      {key: 'Tickets', label: 'Tickets'}
     ],
       form: {
           email: '',

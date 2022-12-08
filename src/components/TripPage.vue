@@ -50,6 +50,10 @@
 
     <h2 id = "hotelHead"><u>Hotels</u></h2>
 
+    <div id = "hotels"><a  href="https://www.expedia.ca/Hotels?locale=en_CA&siteid=4&semcid=CA.UB.GOOGLE.GT-c-EN.HOTEL&SEMDTL=a114397157890.b1127642417338.g1kwd-40256710.l1.e1c.m1Cj0KCQiAkMGcBhCSARIsAIW6d0Caels0aLIv4KU_Yt8EBs9D9QCuUsri8YdFYpXUlPVIYfvKEJFxu-oaAiQOEALw_wcB.r1894d26efd2844f1471e71920bbfe05cc654302225a112848b8869fd8e64fe57c.c1.j19000789.k1.d1624439209725.h1e.i1.n1.o1.p1.q1.s1.t1.x1.f1.u1.v1.w1&gclid=Cj0KCQiAkMGcBhCSARIsAIW6d0Caels0aLIv4KU_Yt8EBs9D9QCuUsri8YdFYpXUlPVIYfvKEJFxu-oaAiQOEALw_wcB">
+<button class = "btn btn-success">Book Hotels</button>
+</a></div>
+
     <pre>{{''}}</pre>
     
     <ul>
@@ -359,6 +363,10 @@
     text-decoration: none;
     border: 1px solid rgb(0, 0, 0);
     
+  }
+  #hotels {
+    text-align: right;
+   
   }
   
 
