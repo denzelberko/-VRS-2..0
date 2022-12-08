@@ -5,7 +5,7 @@
       </ModalHeader>
       <ModalBody>
 
-      <label for="rating">Give this trip a rating:</label>
+      <label for="rating">Give this trip a rating. 5 (best) - 1 (worst):</label>
       <select v-model="rating" id="rating">
         <option placeholder = "Give this trip a rating!" ></option>
         <option v-for = "rating in ratingChoices">{{rating}}</option>

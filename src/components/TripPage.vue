@@ -56,7 +56,7 @@
 
     <div v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
 
-    <p><b>Cost per night: $</b>{{hotel.cost}}</p>
+    <p><b>Cost per night: </b>${{hotel.cost}}</p>
     <p><b>Rating:</b> {{hotel.rating}}</p>
     <pre>{{''}}</pre> 
     <pre>{{''}}</pre> 
@@ -186,13 +186,14 @@
 
   <ul>
 
-<div v-for='review in reviews'> <h4>{{review.message}}</h4> <pre>{{''}}</pre> 
+<div v-for='review in reviews'><div id = 'reviewDiv'> <h4> <b>Review:</b> {{review.message}}</h4> <pre>{{''}}</pre> 
 
 
-<p><b>Rating:</b> {{review.rating}}</p>
+<h4><b>Rating:</b> {{review.rating}}</h4>
+
 <pre>{{''}}</pre> 
-<pre>{{''}}</pre> 
-
+</div>
+<pre>{{''}}</pre>
 </div>
   
 </ul>
@@ -350,6 +351,14 @@
   #img{
     object-fit: cover;
     aspect-ratio: 4 / 3;
+  }
+  #reviewDiv{
+    text-align: left;
+    background-color:#fffffff2;
+    padding: 5px;
+    text-decoration: none;
+    border: 1px solid rgb(0, 0, 0);
+    
   }
   
 
