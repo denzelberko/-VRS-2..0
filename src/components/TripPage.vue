@@ -33,7 +33,7 @@
         <p><b>Description:</b></p>
 
     <p>{{attraction.description}}</p>
-    <p><b>Type of attraction: </b>{{attraction.type}}</p>
+    <p><b>Indoor/outdoor: </b>{{attraction.type}}</p>
     <p><b>Hours to visit: </b>{{attraction.hoursToVisit}}</p>
     <p><b>Cost:</b> ${{attraction.cost}}</p>
     <br>
@@ -56,7 +56,7 @@
 
     <div v-for='hotel in hotels'> <h4>{{hotel.name}}</h4> <pre>{{''}}</pre> 
 
-    <p><b>Cost: $</b>{{hotel.cost}}</p>
+    <p><b>Cost per night: $</b>{{hotel.cost}}</p>
     <p><b>Rating:</b> {{hotel.rating}}</p>
     <pre>{{''}}</pre> 
     <pre>{{''}}</pre> 
@@ -71,36 +71,35 @@
     <table style = "width: 100%">
       <tr>
         <td style = "width: 20%">
-    <p><b>Weather: </b> {{singleDestination.weather}}</p>
+    <p><b>Country: </b> {{singleDestination.country}}</p>
   </td>
   <td style = "width: 20%">
 
     <pre>{{''}}</pre>
     
 
-    
-    <p><b>Kid Friendly Score: </b> {{singleDestination.kidFriendlyScore}}</p>
+    <p><b>Continent: </b> {{singleDestination.continent}}</p>
 
     <pre>{{''}}</pre>
     
   </td>
   <td style = "width: 20%">
     
-    <p><b>Food Quality Score: </b> {{singleDestination.foodQualityScore}}</p>
+    <p><b>Climate: </b> {{singleDestination.weather}}</p>
 
     <pre>{{''}}</pre>
     
   </td>
   <td style = "width: 20%">
    
-    <p><b>Price Index: </b> {{singleDestination.priceIndex}}</p>
+    <p><b>Native Language: </b> {{singleDestination.nativeLanguage}}</p>
 
     <pre>{{''}}</pre>
     
   </td>
   <td style = "width: 20%">
     
-    <p><b>Instagramability Score: </b> {{singleDestination.instagramAbilityScore}}</p>
+    <p><b>Currency: </b> {{singleDestination.currency}}</p>
 
     <pre>{{''}}</pre>
     
@@ -109,21 +108,22 @@
   </tr>
   <tr>
     <td style = "width: 20%">
-    <p><b>Native Language: </b> {{singleDestination.nativeLanguage}}</p>
+    <p><b>Price Index: </b> {{singleDestination.priceIndex}}</p>
 
    
     <pre>{{''}}</pre>
   </td>
   <td style = "width: 20%">
   
+    <p><b>Rec Trip Length: </b> {{singleDestination.recTripLength}}</p>
+
+    
+    <pre>{{''}}</pre>
+  </td>
+  <td style = "width: 20%">
+   
+    
     <p><b>Purpose: </b> {{singleDestination.purpose}}</p>
-
-    
-    <pre>{{''}}</pre>
-  </td>
-  <td style = "width: 20%">
-   
-    <p><b>Hotel Quality Score: </b> {{singleDestination.hotelQualityScore}}</p>
    
    
     <pre>{{''}}</pre>
@@ -132,42 +132,40 @@
   </td>
   <td style = "width: 20%">
 
-    <p><b>Country: </b> {{singleDestination.country}}</p>
-
+    <p><b>Popularity: </b> {{singleDestination.popularity}}</p>
     
     <pre>{{''}}</pre>
 
   </td>
   <td style = "width: 20%">
     
-    <p><b>Continent: </b> {{singleDestination.continent}}</p>
+    <p><b>Food Quality Score: </b> {{singleDestination.foodQualityScore}}</p>
 
     <pre>{{''}}</pre>
 </td>
 </tr>
 <tr>
     <td style = "width: 20%">
-    <p><b>Popularity: </b> {{singleDestination.popularity}}</p>
-
-  
-    <pre>{{''}}</pre>
-
-  </td>
-  <td style = "width: 20%">
-    <p><b>Rec Trip Length: </b> {{singleDestination.recTripLength}}</p>
-
-  
-    <pre>{{''}}</pre>
-  </td>
-  <td style = "width: 20%">
-  
-    <p><b>Currency: </b> {{singleDestination.currency}}</p>
-
-    <pre>{{''}}</pre>
-  </td>
-  <td style = "width: 20%">
-  
+    
     <p><b>Attraction Score: </b> {{singleDestination.attractionScore}}</p>
+
+    <pre>{{''}}</pre>
+
+  </td>
+  <td style = "width: 20%">
+    <p><b>Hotel Quality Score: </b> {{singleDestination.hotelQualityScore}}</p>
+  
+    <pre>{{''}}</pre>
+  </td>
+  <td style = "width: 20%">
+  
+    <p><b>Picturesque Score: </b> {{singleDestination.instagramAbilityScore}}</p>
+
+    <pre>{{''}}</pre>
+  </td>
+  <td style = "width: 20%">
+  
+    <p><b>Child-Friendly Score: </b> {{singleDestination.kidFriendlyScore}}</p>
 
   </td>
   <td style = "width: 20%">
@@ -178,8 +176,11 @@
 
     <pre>{{''}}</pre>
   </td>
+  
   </tr>
+  
   </table>
+  <label>All numerical specifications are out of 10</label>
 
   <h2 id = "reviewHead"><u>Reviews</u></h2>
 
