@@ -82,8 +82,13 @@
     created () {
         this.load()
         EventBus.$on("editDestination", (data) => {
-          console.log(data)
-            axios.put('http://localhost:8085/destinations/' + this.tempId, data)
+            axios.put('http://localhost:8085/destinations/' + this.tempId, 
+            data
+            ).then(response => {
+              console.log('Submit Success')
+            }).catch(e => {
+              console.log(data)
+            });
         })
     },
     computed: {
