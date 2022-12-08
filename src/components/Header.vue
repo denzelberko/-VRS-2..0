@@ -4,6 +4,7 @@
     <a href='http://localhost:3000/#/'>Home</a>
     <a href='http://localhost:3000/#/recommendations/'>Recommendations</a>
     <a href='http://localhost:3000/#/searchtrips'>Search Trips</a>
+    <a href='http://localhost:3000/#/about'>About</a>
     <a href='http://localhost:3000/#/login'>Admin Login</a> 
     </div>
     </template>
