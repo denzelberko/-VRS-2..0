@@ -15,7 +15,9 @@
   </div>
   <div class="info2"><b>The Team</b><p>Our team consists of 6 Industrial Engineering students from the University of Toronto. Each with a unique set of skills, we have put our strengths together to create an innovative product. The individuals involved with the making of the site are: <br>Denzel the Front-End Wizard<br>Matthew the Algorithm King<br>Max the Report Maestro<br>Noah the Style Master<br>Pascal the Back-End Magician<br>Rai'd the Mobile Expert</p></div>
     
-  <div class="info2" ><b>Special Thanks</b><p>Thank you to Trivago for providing information as the basis for our destination data. </p><info>“Trivago.com - compare hotel prices worldwide,” trivago, 2022. [Online]. Available: https://www.trivago.com/. [Accessed: 07-Dec-2022]. </info>
+  <div class="info2" ><b>Special Thanks</b><p>Thank you to Trivago and Tripadvisor for providing information as the basis for our destination data. </p><info>“Trivago.com - compare hotel prices worldwide,” trivago, 2022. [Online]. Available: https://www.trivago.com/. [Accessed: 07-Dec-2022]. </info>
+    <pre>{{''}}</pre>
+    <info>“Tripadvisor,” Tripadvisor, 2022. [Online]. Available: https://www.tripadvisor.ca/. [Accessed: 07-Dec-2022]. </info>
   </div>
 
   <div class="info2">
