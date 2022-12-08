@@ -11,11 +11,11 @@
   </div>
   <div class="info2"><b>Functionality</b><p>There are a broad set of functions that this website is capable of. Using the recommendations feature, based on your own personal parameters, the site will provide you with the top 5 destinations for you. 
     Alternatively, the site can also be used to search from a variety of our included destinations by simply using a search bar. There, you will be able to find out more information about each location, including attractions and hotels.
-  You are also welcome to provide us with your own reviews, that other users will be able to see going forward.</p>
+  You are also welcome to provide us with your own reviews, that other users will be able to see going forward. As a bonus, when viewing a city, click on the name to help find flights.</p>
   </div>
   <div class="info2"><b>The Team</b><p>Our team consists of 6 Industrial Engineering students from the University of Toronto. Each with a unique set of skills, we have put our strengths together to create an innovative product. The individuals involved with the making of the site are: <br>Denzel the Front-End Wizard<br>Matthew the Algorithm King<br>Max the Report Maestro<br>Noah the Style Master<br>Pascal the Back-End Magician<br>Rai'd the Mobile Expert</p></div>
     
-  <div class="info2" ><b>Special Thanks</b><p>Thank you to Trivago for providing information as the basis for our destination data. </p><info>“Trivago.com - compare hotel prices worldwide,” trivago, 2022. [Online]. Available: https://www.trivago.com/. [Accessed: 07-Dec-2022]. </info>
+  <div class="info2" ><b>Special Thanks</b><p>Thank you to Trivago for providing information as the basis for our destination data and Travelocity for flights.<br></p><info>“Trivago.com - compare hotel prices worldwide,” trivago, 2022. [Online]. Available: https://www.trivago.com/. [Accessed: 07-Dec-2022]. <br>“Cheap flights: Find airline tickets, Flights &amp; Airfare: Travelocity,” Travelocity.ca, 2022. [Online]. Available: https://www.travelocity.ca/Flights. [Accessed: 07-Dec-2022].  </info>
   </div>
 
   <div class="info2">

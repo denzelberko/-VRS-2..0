@@ -8,7 +8,7 @@
     <pre>{{''}}</pre>
 
     
-    <h1 id= "name">{{singleDestination.name}}</h1>
+    <h1 id= "name"> <a href="https://www.travelocity.ca/Flights" id= "name" >{{singleDestination.name}}</a></h1>
 
     <pre>{{''}}</pre>
     <pre>{{''}}</pre>
@@ -276,7 +276,7 @@
   
   <!-- Add "scoped" attribute to limit CSS to this component only -->
   <style scoped>
-  h1, h2 {
+  h1, h2, a {
     font-weight: normal;
   }
   h3 {
@@ -290,12 +290,11 @@
     display: inline-block;
     margin: 0 10px;
   }
-  a {
-    color: #42b983;
-  }
+
   #name {
     color: #3086ae;
     text-align: center;
+    text-decoration: none;
    
   }
   .center{
